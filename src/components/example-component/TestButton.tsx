@@ -3,9 +3,9 @@ export type TestButtonProps = {
   label?: string;
 };
 
-const TestButton: React.FC<TestButtonProps> = ({ label = 'Hello world' }) => {
+const TestButton: React.FC<TestButtonProps> = ({ label = "Hello world" }) => {
   return (
-    <button className='flex justify-start align-middle p-5 mw-20 mh-5 font-bold rounded-lg bg-cyan-300 hover:bg-cyan-500 '>
+    <button className="flex justify-start align-middle p-5 mw-20 mh-5 font-bold rounded-lg bg-cyan-300 hover:bg-cyan-500 ">
       {label}
     </button>
   );
