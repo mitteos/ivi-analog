@@ -1,76 +1,113 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { BsChevronCompactRight, BsChevronCompactLeft } from "react-icons/bs";
-import CustomButton from "../custom-button/CustomButton";
 import CustomSliderProps from "./types";
 
-const caruselData = [
-  "Россия",
-  "США",
-  "Франция",
-  "Китай",
-  "Корея",
-  "Великобритания",
-  "Испания",
-  "Италия",
-  "Бразилия",
-  "Индия",
-];
+const scrollOptions: ScrollIntoViewOptions = {
+  behavior: "smooth",
+  block: "nearest",
+};
 
-const CustomSlider: React.FC<CustomSliderProps> = ({ visible }) => {
+const CustomSlider: React.FC<CustomSliderProps> = ({
+  visible,
+  children,
+  step = 2,
+}) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const sliderContentRef = useRef<HTMLDivElement>(null);
-  const [currentPosition, setCurrentPosition] = useState(0);
+  const initialAmountOfVisibleItemsRef = useRef<number>(0);
+  const lastVisibleItemIndexRef = useRef<number>(0);
+  const firstVisibleItemIndexRef = useRef<number>(0);
+  const listOfItemsRef = useRef<HTMLCollection>();
   const [showPrevButton, setShowPrevButton] = useState(false);
   const [showNextButton, setShowNextButton] = useState(false);
 
   const handleNextClick = useCallback(() => {
-    setCurrentPosition((curr) => {
-      if (sliderContentRef.current && sliderRef.current) {
-        if (
-          sliderRef.current.offsetWidth + 50 >
-          sliderRef.current.scrollWidth
-        ) {
-          setShowNextButton(false);
-        }
+    lastVisibleItemIndexRef.current += step;
+    if (lastVisibleItemIndexRef.current < listOfItemsRef.current!.length - 1) {
+      firstVisibleItemIndexRef.current += step;
+      listOfItemsRef.current![lastVisibleItemIndexRef.current].scrollIntoView(
+        scrollOptions
+      );
+      setShowPrevButton(true);
+    } else {
+      lastVisibleItemIndexRef.current = listOfItemsRef.current!.length - 1;
+      listOfItemsRef.current![lastVisibleItemIndexRef.current].scrollIntoView(
+        scrollOptions
+      );
+      setShowNextButton(false);
 
-        if (sliderRef.current.offsetWidth < sliderRef.current.scrollWidth) {
-          curr -= 50;
-          sliderContentRef.current.style.transform = `translateX(${curr}px)`;
-          setShowPrevButton(true);
+      let amountOfVisibleItems = 0;
+      let summOfItemsWidth = 0;
+      const sliderWidth = sliderContentRef.current!.clientWidth;
+      const listOfItemsWidth = Array.from(listOfItemsRef.current!)
+        .reverse()
+        .map((i) => i.clientWidth + 8);
+
+      for (const itemWidth of listOfItemsWidth) {
+        summOfItemsWidth += itemWidth;
+        if (summOfItemsWidth <= sliderWidth) {
+          amountOfVisibleItems++;
+        } else {
+          firstVisibleItemIndexRef.current =
+            listOfItemsRef.current!.length - amountOfVisibleItems;
+          break;
         }
       }
-      return curr;
-    });
+    }
   }, []);
 
   const handlePrevClick = useCallback(() => {
-    setCurrentPosition((curr) => {
-      if (sliderContentRef.current && sliderRef.current) {
-        if (curr + 50 === 0) setShowPrevButton(false);
-        if (curr < 0) {
-          curr += 50;
-          sliderContentRef.current.style.transform = `translateX(${curr}px)`;
-          setShowNextButton(true);
-        }
-      }
-      return curr;
-    });
+    if (firstVisibleItemIndexRef.current - step > 0) {
+      firstVisibleItemIndexRef.current -= step;
+      lastVisibleItemIndexRef.current -= step;
+      listOfItemsRef.current![firstVisibleItemIndexRef.current].scrollIntoView(
+        scrollOptions
+      );
+      setShowNextButton(true);
+    } else {
+      firstVisibleItemIndexRef.current = 0;
+      lastVisibleItemIndexRef.current =
+        initialAmountOfVisibleItemsRef.current - 1;
+
+      listOfItemsRef.current![0].scrollIntoView(scrollOptions);
+      setShowPrevButton(false);
+    }
   }, []);
 
   // определяем нужны копки или нет
   useEffect(() => {
     if (visible) {
-      if (sliderRef.current) {
-        if (sliderRef.current.offsetWidth < sliderRef.current.scrollWidth) {
-          setShowNextButton(true);
+      listOfItemsRef.current = sliderContentRef.current!.children;
+      let amountOfVisibleItems = 0;
+      let summOfItemsWidth = 0;
+      const sliderWidth = sliderContentRef.current!.clientWidth;
+      const listOfItemsWidth = Array.from(listOfItemsRef.current).map(
+        (i) => i.clientWidth + 8
+      );
+
+      for (const itemWidth of listOfItemsWidth) {
+        summOfItemsWidth += itemWidth;
+        if (summOfItemsWidth <= sliderWidth) {
+          amountOfVisibleItems++;
+        } else {
+          initialAmountOfVisibleItemsRef.current = amountOfVisibleItems;
+          lastVisibleItemIndexRef.current = amountOfVisibleItems - 1;
+          break;
         }
       }
-    } else setCurrentPosition(0);
-    // приводим в исходное состояние
-    return () => {
-      sliderContentRef.current!.style.transform = `translateX(${0}px)`;
+
+      if (amountOfVisibleItems !== listOfItemsRef.current.length) {
+        setShowNextButton(true);
+      } else setShowNextButton(false);
+
       setShowPrevButton(false);
-      setCurrentPosition(0);
+    }
+    return () => {
+      listOfItemsRef.current &&
+        listOfItemsRef.current[0].scrollIntoView({ block: "nearest" });
+      firstVisibleItemIndexRef.current = 0;
+      lastVisibleItemIndexRef.current = 0;
+      initialAmountOfVisibleItemsRef.current = 0;
     };
   }, [visible]);
 
@@ -87,17 +124,12 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ visible }) => {
           <BsChevronCompactLeft className="text-white" size={25} />
         </div>
       )}
+      {/* Элементы слайдера. Нужно добавить условие на visible */}
       <div
         ref={sliderContentRef}
-        className="
-          flex w-auto mt-2 pb-4  gap-2 transition
-        "
+        className="flex w-auto mt-2 pb-4 gap-2 transition overflow-hidden"
       >
-        {caruselData.map((data, idx) => (
-          <CustomButton icon="plus" colorType="default" key={idx}>
-            {data}
-          </CustomButton>
-        ))}
+        {children}
       </div>
       {showNextButton && (
         <div

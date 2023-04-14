@@ -1,7 +1,21 @@
 import React, { forwardRef } from "react";
 import CustomSelectListItem from "../custom-select-list-item/CustomSelectListItem";
-import CustomSelectCarusel from "../../custom-slider/CustomSlider";
+import CustomSlider from "../../custom-slider/CustomSlider";
 import CustomSelectListProps from "./types";
+import CustomButton from "../../custom-button/CustomButton";
+
+const sliderData = [
+  "Россия",
+  "США",
+  "Франция",
+  "Китай",
+  "Корея",
+  "Великобритания",
+  "Испания",
+  "Италия",
+  "Бразилия",
+  "Индия",
+];
 
 const listPositionStyles = (size: string | undefined) => {
   switch (size) {
@@ -41,7 +55,13 @@ const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
           ${listPositionStyles(size)}
         `}
       >
-        <CustomSelectCarusel visible={visible} />
+        <CustomSlider step={2} visible={visible}>
+          {sliderData.map((data, idx) => (
+            <CustomButton icon="plus" colorType="default" key={idx}>
+              {data}
+            </CustomButton>
+          ))}
+        </CustomSlider>
         <ul
           className={`
             transition text-[#d9d7e0cc] list-none
