@@ -1,92 +1,72 @@
-// import type { Meta, StoryObj } from "@storybook/react";
-// import CustomSlider from "./CustomSlider";
-// import CustomButton from "../custom-button/CustomButton";
-// import { data } from "autoprefixer";
-
-// const sliderData = [
-//   "Россия",
-//   "США",
-//   "Франция",
-//   "Китай",
-//   "Корея",
-//   "Великобритания",
-//   "Испания",
-//   "Италия",
-//   "Бразилия",
-//   "Индия",
-//   "Китай",
-//   "Корея",
-//   "Великобритания",
-//   "Испания",
-//   "Италия",
-//   "Бразилия",
-//   "Индия",
-// ];
-
-// const meta: Meta<typeof CustomSlider> = {
-//   title: "Custom-UI/Slider",
-//   component: CustomSlider,
-//   tags: ["autodocs"],
-//   argTypes: {
-//     step: {
-//       description: "шаг прокрутки",
-//       control: { type: "number" },
-//     },
-//   },
-//   parameters: {
-//     backgrounds: {
-//       default: "ivi",
-//       values: [{ name: "ivi", value: "#312b45" }],
-//     },
-//   },
-// };
-
-// export default meta;
-
-// type Story = StoryObj<typeof CustomSlider>;
-
-// export const Default: Story = {
-//   args: {
-//     children: sliderData.map((i, idx) => (
-//       <CustomButton colorType="default" key={idx}>
-//         {i}
-//       </CustomButton>
-//     )),
-//     step: 4,
-//     visible: true,
-//   },
-// };
-
 import type { Meta, StoryObj } from "@storybook/react";
-import CustomSelect from "../custom-select/CustomSelect";
+import CustomSlider from "./CustomSlider";
+import CustomButton from "../custom-button/CustomButton";
 
-const meta: Meta<typeof CustomSelect> = {
-  title: "Custom-UI/Select12",
-  component: CustomSelect,
+const GenreItem = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="!w-[160px] h-[160px] rounded-md bg-[#1f1b2e] flex text-white shrink-0 justify-center items-center">
+      {children}
+    </div>
+  );
+};
+
+const sliderData = [
+  "Россия",
+  "США",
+  "Франция",
+  "Китай",
+  "Корея",
+  "Великобритания",
+  "Испания",
+  "Италия",
+  "Бразилия",
+  "Индия",
+  "Китай",
+  "Корея",
+  "Великобритания",
+  "Испания",
+  "Италия",
+  "Бразилия",
+  "Индия",
+];
+
+const meta: Meta<typeof CustomSlider> = {
+  title: "Custom-UI/Slider",
+  component: CustomSlider,
   tags: ["autodocs"],
   argTypes: {
-    title: {
-      description: "заголовок селекта",
-      control: { type: "text" },
+    step: {
+      description: "шаг прокрутки",
+      control: { type: "number" },
+    },
+  },
+  parameters: {
+    backgrounds: {
+      default: "ivi",
+      values: [{ name: "ivi", value: "#312b45" }],
     },
   },
 };
 
 export default meta;
 
-type Story = StoryObj<typeof CustomSelect>;
+type Story = StoryObj<typeof CustomSlider>;
 
 export const Default: Story = {
   args: {
-    title: "Года",
-    options: ["2012", "2019", "2020", "2021"],
+    children: sliderData.map((i, idx) => (
+      <CustomButton colorType="default" key={idx}>
+        {i}
+      </CustomButton>
+    )),
+    step: 4,
+    visible: true,
   },
 };
-
-export const Big: Story = {
+export const GenreSlider: Story = {
   args: {
-    title: "Жанры",
-    size: "big",
-    options: ["something", "something"],
+    children: sliderData.map((i, idx) => <GenreItem key={idx}>{i}</GenreItem>),
+    step: 4,
+    visible: true,
   },
 };
