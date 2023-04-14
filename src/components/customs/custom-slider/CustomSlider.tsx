@@ -17,25 +17,25 @@ const caruselData = [
 ];
 
 const CustomSlider: React.FC<CustomSliderProps> = ({ visible }) => {
-  const caruselRef = useRef<HTMLDivElement>(null);
-  const caruselContent = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const sliderContentRef = useRef<HTMLDivElement>(null);
   const [currentPosition, setCurrentPosition] = useState(0);
   const [showPrevButton, setShowPrevButton] = useState(false);
   const [showNextButton, setShowNextButton] = useState(false);
 
   const handleNextClick = useCallback(() => {
     setCurrentPosition((curr) => {
-      if (caruselContent.current && caruselRef.current) {
+      if (sliderContentRef.current && sliderRef.current) {
         if (
-          caruselRef.current.offsetWidth + 50 >
-          caruselRef.current.scrollWidth
+          sliderRef.current.offsetWidth + 50 >
+          sliderRef.current.scrollWidth
         ) {
           setShowNextButton(false);
         }
 
-        if (caruselRef.current.offsetWidth < caruselRef.current.scrollWidth) {
+        if (sliderRef.current.offsetWidth < sliderRef.current.scrollWidth) {
           curr -= 50;
-          caruselContent.current.style.transform = `translateX(${curr}px)`;
+          sliderContentRef.current.style.transform = `translateX(${curr}px)`;
           setShowPrevButton(true);
         }
       }
@@ -45,11 +45,11 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ visible }) => {
 
   const handlePrevClick = useCallback(() => {
     setCurrentPosition((curr) => {
-      if (caruselContent.current && caruselRef.current) {
+      if (sliderContentRef.current && sliderRef.current) {
         if (curr + 50 === 0) setShowPrevButton(false);
         if (curr < 0) {
           curr += 50;
-          caruselContent.current.style.transform = `translateX(${curr}px)`;
+          sliderContentRef.current.style.transform = `translateX(${curr}px)`;
           setShowNextButton(true);
         }
       }
@@ -60,15 +60,15 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ visible }) => {
   // определяем нужны копки или нет
   useEffect(() => {
     if (visible) {
-      if (caruselRef.current) {
-        if (caruselRef.current.offsetWidth < caruselRef.current.scrollWidth) {
+      if (sliderRef.current) {
+        if (sliderRef.current.offsetWidth < sliderRef.current.scrollWidth) {
           setShowNextButton(true);
         }
       }
     } else setCurrentPosition(0);
     // приводим в исходное состояние
     return () => {
-      caruselContent.current!.style.transform = `translateX(${0}px)`;
+      sliderContentRef.current!.style.transform = `translateX(${0}px)`;
       setShowPrevButton(false);
       setCurrentPosition(0);
     };
@@ -76,7 +76,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ visible }) => {
 
   return (
     <div
-      ref={caruselRef}
+      ref={sliderRef}
       className="z-20 w-full overflow-hidden relative border-b-2 border-b-white"
     >
       {showPrevButton && (
@@ -88,7 +88,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ visible }) => {
         </div>
       )}
       <div
-        ref={caruselContent}
+        ref={sliderContentRef}
         className="
           flex w-auto mt-2 pb-4  gap-2 transition
         "
