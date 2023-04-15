@@ -13,7 +13,6 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <Layout title={title} description={description}>
       <div className='page-container'>
-        <h1 className='text-2xl mb-3'>Let&apos;s get started!</h1>
         <TestButton />
       </div>
     </Layout>
