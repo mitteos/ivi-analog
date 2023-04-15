@@ -61,7 +61,15 @@ const Movies: React.FC<MoviesProps> = () => {
         <div>
           <CustomSlider>
             {sliderData.map((i, idx) => (
-              <PreviewFilm key={idx} />
+              <PreviewFilm
+                z={sliderData.length * 100 - idx}
+                country="Франция"
+                duration={140}
+                genre="Комедия"
+                year={2012}
+                ratio={9.5}
+                key={idx}
+              />
             ))}
           </CustomSlider>
         </div>

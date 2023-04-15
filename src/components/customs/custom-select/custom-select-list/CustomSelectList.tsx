@@ -47,7 +47,7 @@ const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
         ref={ref}
         className={`
           flex flex-col p-4 w-full 
-          absolute bg-[#312b45] top-[58px] rounded-md z-10 
+          absolute bg-[#312b45] top-[58px] rounded-md z-30 
           sm:group-odd/list:left-0 sm:group-even/list:right-0
           ${listPositionStyles(size)}
         `}
