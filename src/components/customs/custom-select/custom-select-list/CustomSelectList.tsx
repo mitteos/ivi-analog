@@ -20,9 +20,9 @@ const sliderData = [
 const listPositionStyles = (size: string | undefined) => {
   switch (size) {
     case "big":
-      return `md:group-odd/list:-left-[70%] md:group-even/list:-right-[70%] 
-              md:group-first/list:!left-0 md:group-last/list:!right-0
-              w-full h-auto sm:w-[420px] md:w-[630px]
+      return `md:group-odd/list:-translate-x-[30%] md:group-even/list:translate-x-[30%]
+              md:group-first/list:!translate-x-0 md:group-last/list:!translate-x-0
+              w-full h-auto sm:w-[180%] md:w-[250%]
             `;
 
     default:

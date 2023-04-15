@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { BsChevronDown } from "react-icons/bs";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import CustomSelectList from "./custom-select-list/CustomSelectList";
 import CustomSelectProps from "./types";
 
@@ -52,8 +52,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         `}
       >
         <p ref={selectTitleRef}>{title}</p>
-        <BsChevronDown
-          className={`transition ${showList ? "rotate-180" : "rotate-0"}`}
+        <ChevronDownIcon
+          className={`transition ${showList ? "rotate-180" : "rotate-0"} w-8`}
         />
       </div>
       {showList && (

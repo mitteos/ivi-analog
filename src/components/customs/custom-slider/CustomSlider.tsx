@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { BsChevronCompactRight, BsChevronCompactLeft } from "react-icons/bs";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import CustomSliderProps from "./types";
 
 const scrollOptions: ScrollIntoViewOptions = {
@@ -108,29 +108,28 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ children, step = 2 }) => {
   return (
     <div
       ref={sliderRef}
-      className="z-20 w-full overflow-hidden relative border-b-2 border-b-white"
+      className="z-20 w-full relative border-b-2 border-b-white flex items-center"
     >
       {showPrevButton && (
         <div
           onClick={handlePrevClick}
-          className="absolute top-0 left-0 cursor-pointer h-full flex items-center w-[20px] bg-[#312b45] z-20"
+          className="absolute top-0 -left-[20px] cursor-pointer h-full flex items-center w-[20px] bg-[#312b45] z-20"
         >
-          <BsChevronCompactLeft className="text-white" size={25} />
+          <ChevronLeftIcon className="text-white w-5" />
         </div>
       )}
-      {/* Элементы слайдера */}
       <div
         ref={sliderContentRef}
-        className="flex w-auto mt-2 pb-4 gap-2 transition overflow-hidden"
+        className="flex w-full mt-2 pb-4 gap-4 transition overflow-hidden"
       >
         {children}
       </div>
       {showNextButton && (
         <div
           onClick={handleNextClick}
-          className="absolute top-0 right-0 cursor-pointer h-full flex items-center w-[20px] bg-[#312b45] z-20"
+          className="absolute top-0 -right-[20px] cursor-pointer h-full flex items-center w-[20px] bg-[#312b45] z-20"
         >
-          <BsChevronCompactRight className="text-white" size={25} />
+          <ChevronRightIcon className="text-white" />
         </div>
       )}
     </div>

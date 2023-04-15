@@ -1,6 +1,6 @@
 import CustomButton from "@/components/customs/custom-button/CustomButton";
 import CustomSelect from "@/components/customs/custom-select/CustomSelect";
-import { RxCross2 } from "react-icons/rx";
+import { PlusIcon } from "@heroicons/react/20/solid";
 
 const FilterBar = () => {
   const a: { title: string; size?: "big"; options: string[] }[] = [
@@ -109,7 +109,7 @@ const FilterBar = () => {
         </CustomButton>
       </div>
       <button className="text-white opacity-30 inline-flex w-[180px] items-center justify-evenly">
-        <RxCross2 size={25} />
+        <PlusIcon className="w-8 rotate-45" />
         Сбросить фильтры
       </button>
     </div>

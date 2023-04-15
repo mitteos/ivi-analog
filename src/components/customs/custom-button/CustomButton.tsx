@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMdAdd } from "react-icons/io";
+import { PlusIcon } from "@heroicons/react/20/solid";
 import CustomButtonProps from "./types";
 
 const getColors = (colorType: string) => {
@@ -14,7 +14,7 @@ const getColors = (colorType: string) => {
 const getIcon = (iconType: string | undefined) => {
   switch (iconType) {
     case "plus":
-      return <IoMdAdd size={20} />;
+      return <PlusIcon className="w-6" />;
 
     default:
       return null;
