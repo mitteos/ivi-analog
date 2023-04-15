@@ -1,12 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { BookmarkIcon as BookmarkIconOutline } from "@heroicons/react/24/outline";
-import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
-import { SparklesIcon as SparklesIconSolid } from "@heroicons/react/24/solid";
 import { SparklesIcon as SparklesIconOutline } from "@heroicons/react/24/outline";
-import { NoSymbolIcon as NoSymbolIconSolid } from "@heroicons/react/24/solid";
 import { NoSymbolIcon as NoSymbolIconOutline } from "@heroicons/react/24/outline";
 import { PreviewFilmProps } from "./types";
 
