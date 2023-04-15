@@ -30,32 +30,29 @@ const listPositionStyles = (size: string | undefined) => {
   }
 };
 
-const listItemsLayout = (size: string | undefined, visible: boolean) => {
-  if (visible) {
-    switch (size) {
-      case "big":
-        return "sm:grid sm:gap-x-[40px] sm:grid-cols-2 md:grid-cols-3";
+const listItemsLayout = (size: string | undefined) => {
+  switch (size) {
+    case "big":
+      return "sm:grid sm:gap-x-[40px] sm:grid-cols-2 md:grid-cols-3";
 
-      default:
-        return "";
-    }
+    default:
+      return "";
   }
 };
 
 const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
-  ({ visible, size, options }, ref) => {
+  ({ size, options }, ref) => {
     return (
       <div
         ref={ref}
         className={`
-          flex flex-col p-4 w-full
-          ${visible ? "block" : "hidden"} 
+          flex flex-col p-4 w-full 
           absolute bg-[#312b45] top-[58px] rounded-md z-10 
           sm:group-odd/list:left-0 sm:group-even/list:right-0
           ${listPositionStyles(size)}
         `}
       >
-        <CustomSlider step={2} visible={visible}>
+        <CustomSlider step={2}>
           {sliderData.map((data, idx) => (
             <CustomButton icon="plus" colorType="default" key={idx}>
               {data}
@@ -66,7 +63,7 @@ const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
           className={`
             transition text-[#d9d7e0cc] list-none
             flex flex-col flex-wrap
-            ${listItemsLayout(size, visible)}
+            ${listItemsLayout(size)}
           `}
         >
           {options.map((i, idx) => (

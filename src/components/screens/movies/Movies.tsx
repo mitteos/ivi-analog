@@ -28,6 +28,7 @@ const Movies: React.FC<MoviesProps> = () => {
         <h1>Movies Page</h1>
 
         <FilterBar></FilterBar>
+        <div></div>
       </div>
     </Layout>
   );

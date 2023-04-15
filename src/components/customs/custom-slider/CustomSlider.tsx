@@ -7,11 +7,7 @@ const scrollOptions: ScrollIntoViewOptions = {
   block: "nearest",
 };
 
-const CustomSlider: React.FC<CustomSliderProps> = ({
-  visible,
-  children,
-  step = 2,
-}) => {
+const CustomSlider: React.FC<CustomSliderProps> = ({ children, step = 2 }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const sliderContentRef = useRef<HTMLDivElement>(null);
   const initialAmountOfVisibleItemsRef = useRef<number>(0);
@@ -74,34 +70,32 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
     }
   }, []);
 
-  // определяем нужны копки или нет
   useEffect(() => {
-    if (visible) {
-      listOfItemsRef.current = sliderContentRef.current!.children;
-      let amountOfVisibleItems = 0;
-      let summOfItemsWidth = 0;
-      const sliderWidth = sliderContentRef.current!.clientWidth;
-      const listOfItemsWidth = Array.from(listOfItemsRef.current).map(
-        (i) => i.clientWidth + 8
-      );
+    listOfItemsRef.current = sliderContentRef.current!.children;
+    let amountOfVisibleItems = 0;
+    let summOfItemsWidth = 0;
+    const sliderWidth = sliderContentRef.current!.clientWidth;
+    const listOfItemsWidth = Array.from(listOfItemsRef.current).map(
+      (i) => i.clientWidth + 8
+    );
 
-      for (const itemWidth of listOfItemsWidth) {
-        summOfItemsWidth += itemWidth;
-        if (summOfItemsWidth <= sliderWidth) {
-          amountOfVisibleItems++;
-        } else {
-          initialAmountOfVisibleItemsRef.current = amountOfVisibleItems;
-          lastVisibleItemIndexRef.current = amountOfVisibleItems - 1;
-          break;
-        }
+    for (const itemWidth of listOfItemsWidth) {
+      summOfItemsWidth += itemWidth;
+      if (summOfItemsWidth <= sliderWidth) {
+        amountOfVisibleItems++;
+      } else {
+        initialAmountOfVisibleItemsRef.current = amountOfVisibleItems;
+        lastVisibleItemIndexRef.current = amountOfVisibleItems - 1;
+        break;
       }
-
-      if (amountOfVisibleItems !== listOfItemsRef.current.length) {
-        setShowNextButton(true);
-      } else setShowNextButton(false);
-
-      setShowPrevButton(false);
     }
+
+    if (amountOfVisibleItems !== listOfItemsRef.current.length) {
+      setShowNextButton(true);
+    } else setShowNextButton(false);
+
+    setShowPrevButton(false);
+
     return () => {
       listOfItemsRef.current &&
         listOfItemsRef.current[0].scrollIntoView({ block: "nearest" });
@@ -109,7 +103,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
       lastVisibleItemIndexRef.current = 0;
       initialAmountOfVisibleItemsRef.current = 0;
     };
-  }, [visible]);
+  }, []);
 
   return (
     <div
@@ -124,7 +118,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
           <BsChevronCompactLeft className="text-white" size={25} />
         </div>
       )}
-      {/* Элементы слайдера. Нужно добавить условие на visible */}
+      {/* Элементы слайдера */}
       <div
         ref={sliderContentRef}
         className="flex w-auto mt-2 pb-4 gap-2 transition overflow-hidden"

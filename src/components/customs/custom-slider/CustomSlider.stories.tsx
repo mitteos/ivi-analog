@@ -60,13 +60,11 @@ export const Default: Story = {
       </CustomButton>
     )),
     step: 4,
-    visible: true,
   },
 };
 export const GenreSlider: Story = {
   args: {
     children: sliderData.map((i, idx) => <GenreItem key={idx}>{i}</GenreItem>),
     step: 4,
-    visible: true,
   },
 };
