@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import FilterBar from "./filterbar/FilterBar";
 import CustomSlider from "@/components/customs/custom-slider/CustomSlider";
-import PreviewFilm from "@/components/preview-film/PreviewFilm";
+import PreviewFilm from "@/components/previews/preview-film/PreviewFilm";
 
 const title =
   "Смотреть фильмы онлайн бесплатно в хорошем HD качестве и без регистрации. Удобный просмотр онлайн фильмов на ivi.ru";
@@ -58,21 +58,19 @@ const Movies: React.FC<MoviesProps> = () => {
         <h1>Movies Page</h1>
 
         <FilterBar></FilterBar>
-        <div>
-          <CustomSlider>
-            {sliderData.map((i, idx) => (
-              <PreviewFilm
-                z={sliderData.length * 100 - idx}
-                country="Франция"
-                duration={140}
-                genre="Комедия"
-                year={2012}
-                ratio={9.5}
-                key={idx}
-              />
-            ))}
-          </CustomSlider>
-        </div>
+
+        <CustomSlider size="default">
+          {sliderData.map((i, idx) => (
+            <PreviewFilm
+              country="Франция"
+              duration={140}
+              genre="Комедия"
+              year={2012}
+              ratio={9.5}
+              key={idx}
+            />
+          ))}
+        </CustomSlider>
       </div>
     </Layout>
   );

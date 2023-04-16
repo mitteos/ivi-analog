@@ -4,6 +4,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&display=swap");
 
+:root {
+  --swiper-theme-color: red !important;
+  --swiper-navigation-size: 30px !important;
+}
+
 body {
   font-family: "Noto Sans", sans-serif;
 }
@@ -13,4 +18,14 @@ body {
 
 .page-container {
   @apply max-w-screen-xl mx-auto;
+}
+
+.swiper-button-next {
+  right: -30px !important;
+}
+.swiper-button-prev {
+  left: -30px !important;
+}
+.swiper-button-disabled {
+  display: none !important;
 }
