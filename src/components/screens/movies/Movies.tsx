@@ -2,26 +2,12 @@ import Layout from "@/components/layout/Layout";
 import FilterBar from "./filterbar/FilterBar";
 import CustomSlider from "@/components/customs/custom-slider/CustomSlider";
 import PreviewFilm from "@/components/previews/preview-film/PreviewFilm";
+import PreviewActor from "@/components/previews/preview-actor/PreviewActor";
 
 const title =
   "Смотреть фильмы онлайн бесплатно в хорошем HD качестве и без регистрации. Удобный просмотр онлайн фильмов на ivi.ru";
 
 type MoviesProps = {};
-
-const options = [
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-  "тестик",
-];
 
 const sliderData = [
   "Россия",
@@ -59,14 +45,26 @@ const Movies: React.FC<MoviesProps> = () => {
 
         <FilterBar></FilterBar>
 
-        <CustomSlider size="default">
+        <CustomSlider id="films" size="default">
           {sliderData.map((i, idx) => (
             <PreviewFilm
               country="Франция"
+              acception="Бесплатно"
               duration={140}
               genre="Комедия"
               year={2012}
               ratio={9.5}
+              title="Один плюс один"
+              key={idx}
+            />
+          ))}
+        </CustomSlider>
+        <CustomSlider id="actors" size="default">
+          {sliderData.map((i, idx) => (
+            <PreviewActor
+              firstName="Скарлетт"
+              secondName="Йоханссон"
+              films={11}
               key={idx}
             />
           ))}

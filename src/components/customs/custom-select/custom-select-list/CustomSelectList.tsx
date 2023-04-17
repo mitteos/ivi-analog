@@ -52,7 +52,7 @@ const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
           ${listPositionStyles(size)}
         `}
       >
-        <CustomSlider step={2}>
+        <CustomSlider id="filter" size="small">
           {sliderData.map((data, idx) => (
             <CustomButton icon="plus" colorType="default" key={idx}>
               {data}

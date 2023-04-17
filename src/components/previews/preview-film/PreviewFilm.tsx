@@ -1,5 +1,4 @@
-import React, { MouseEventHandler, useEffect, useRef } from "react";
-import Image from "next/image";
+import React, { useEffect, useRef } from "react";
 import { BookmarkIcon as BookmarkIconOutline } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
 import { SparklesIcon as SparklesIconOutline } from "@heroicons/react/24/outline";
@@ -12,6 +11,8 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
   duration,
   country,
   genre,
+  title,
+  acception,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -25,13 +26,13 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
 
       tooltipElem = document.createElement("div");
       tooltipElem.className =
-        "absolute rounded-md p-2 bg-[#1f1b2e] text-white z-20 text-[14px]";
+        "absolute rounded-md p-1 bg-[#1f1b2e] text-white z-20 text-[14px]";
       tooltipElem.innerHTML = tooltipHtml;
       document.body.append(tooltipElem);
 
       const coords = target!.getBoundingClientRect();
       const left = coords.left;
-      const top = coords.top - tooltipElem.offsetHeight - 5;
+      const top = coords.top - tooltipElem.offsetHeight - 5 + window.scrollY;
 
       tooltipElem.style.left = left + "px";
       tooltipElem.style.top = top + "px";
@@ -61,45 +62,43 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
   }, []);
 
   return (
-    <div
-      className={`relative w-full cursor-pointer transition hover:scale-[1.05] group/preview mt-10`}
-    >
-      <div className="relative">
-        <Image
-          src="/images/one-plus-one.jpg"
-          alt="film-preview"
-          width={180}
-          height={248}
-          className="rounded-md"
-        />
-
+    <div className="my-5 flex flex-col w-auto">
+      {/* Постер */}
+      <div
+        className={`relative w-[150px] h-[230px] cursor-pointer bg-[url('/images/one-plus-one.jpg')]
+         transition hover:scale-[1.05] group/preview rounded-md bg-cover bg-center
+      `}
+      >
+        {/* Дополнительная информация */}
         <div
           className="
           absolute transition 
-          w-full h-full top-0 left-0 flex flex-col p-5 
+          w-full h-full top-0 left-0 flex flex-col 
           opacity-0 group-hover/preview:opacity-100 rounded-md
-          group-hover/preview:bg-[rgba(0,0,0,0.5)] z-20
+          group-hover/preview:bg-[rgba(0,0,0,0.5)] z-[2] p-3
         "
         >
+          {/* Кнопки на постере */}
           <div className="flex justify-between">
             <div className="text-white flex items-end text-[22px]">{ratio}</div>
             <div className="flex flex-col gap-2" ref={ref}>
               <div data-title="Смотреть позже">
-                <BookmarkIconOutline className="text-white w-7 stroke-[3]" />
+                <BookmarkIconOutline className="text-white w-6 stroke-[3]" />
               </div>
               <div data-title="Похожее">
-                <SparklesIconOutline className="text-white w-7 stroke-[2]" />
+                <SparklesIconOutline className="text-white w-6 stroke-[2]" />
               </div>
-              <div data-title="Уже смотрел, оценить">
-                <StarIconOutline className="text-white w-7 stroke-[3]" />
+              <div data-title="Оценить">
+                <StarIconOutline className="text-white w-6 stroke-[3]" />
               </div>
-              <div data-title="Не травится такое">
-                <NoSymbolIconOutline className="text-white w-7 stroke-[3]" />
+              <div data-title="Не нравится">
+                <NoSymbolIconOutline className="text-white w-6 stroke-[3]" />
               </div>
             </div>
           </div>
 
-          <div className="text-white flex flex-col gap-1">
+          {/* Описание */}
+          <div className="text-white flex flex-col text-[13px]">
             <span>
               сюжет
               <span></span>
@@ -111,6 +110,11 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
             <span>{duration}</span>
           </div>
         </div>
+      </div>
+      {/* Название */}
+      <div className="text-white mt-2">
+        <p className="font-semibold leading-[22px]">{title}</p>
+        <p className="leading-[16px] text-[15px]">{acception}</p>
       </div>
     </div>
   );

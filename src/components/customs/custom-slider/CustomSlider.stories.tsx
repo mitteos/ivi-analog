@@ -34,12 +34,7 @@ const meta: Meta<typeof CustomSlider> = {
   title: "Custom-UI/Slider",
   component: CustomSlider,
   tags: ["autodocs"],
-  argTypes: {
-    step: {
-      description: "шаг прокрутки",
-      control: { type: "number" },
-    },
-  },
+  argTypes: {},
   parameters: {
     backgrounds: {
       default: "ivi",
@@ -59,12 +54,10 @@ export const Default: Story = {
         {i}
       </CustomButton>
     )),
-    step: 4,
   },
 };
 export const GenreSlider: Story = {
   args: {
     children: sliderData.map((i, idx) => <GenreItem key={idx}>{i}</GenreItem>),
-    step: 4,
   },
 };

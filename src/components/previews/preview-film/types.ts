@@ -4,4 +4,6 @@ export interface PreviewFilmProps {
   country: string;
   genre: string;
   duration: number;
+  title: string;
+  acception: string;
 }
