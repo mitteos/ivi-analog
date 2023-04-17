@@ -6,6 +6,8 @@ import PreviewFilm from "@/components/previews/preview-film/PreviewFilm";
 import PreviewActor from "@/components/previews/preview-actor/PreviewActor";
 import Headerbar from "./headerbar/Headerbar";
 import PreviewFilmLast from "@/components/previews/preview-film-last/PreviewFilmLast";
+import PreviewGenre from "@/components/previews/preview-genre/PreviewGenre";
+import { GlobeAltIcon } from "@heroicons/react/20/solid";
 
 const title =
   "Смотреть фильмы онлайн бесплатно в хорошем HD качестве и без регистрации. Удобный просмотр онлайн фильмов на ivi.ru";
@@ -32,14 +34,6 @@ const sliderData = [
   "Индия",
 ];
 
-const GenreItem = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="w-[180px] h-[280px] rounded-md bg-[#1f1b2e] flex text-white shrink-0 justify-center items-center">
-      {children}
-    </div>
-  );
-};
-
 const Movies: React.FC<MoviesProps> = () => {
   return (
     <Layout title={title}>
@@ -49,6 +43,16 @@ const Movies: React.FC<MoviesProps> = () => {
         </Section>
         <Section>
           <FilterBar></FilterBar>
+        </Section>
+        <Section>
+          <MoviesSlider link="#" id="genres" data={sliderData} title="Жанры">
+            {sliderData.map((data, index) => (
+              <PreviewGenre
+                title="Зарубежные"
+                icon={<GlobeAltIcon className="w-[40px]" />}
+              />
+            ))}
+          </MoviesSlider>
         </Section>
         <Section>
           <MoviesSlider
@@ -105,6 +109,7 @@ const Movies: React.FC<MoviesProps> = () => {
                 ratio={9.2}
                 title="Монах и Бес"
                 year={2008}
+                iviChoice
               />
             ))}
           </MoviesSlider>

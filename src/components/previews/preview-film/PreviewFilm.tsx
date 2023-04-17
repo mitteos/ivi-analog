@@ -97,7 +97,12 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
          transition hover:scale-[1.05] group/preview rounded-md bg-cover bg-center
       `}
       >
-        {iviChoice && <div></div>}
+        {/* плашка "выбор иви" */}
+        {iviChoice && (
+          <div className="absolute top-2 -left-2 text-sm font-bold py-[2px] z-[3] px-2 rounded-full text-white bg-[#ea003d] shadow-[0_2px_8px_rgba(234,0,61,.8)]">
+            выбор Иви
+          </div>
+        )}
         {/* Дополнительная информация */}
         <div
           className="
