@@ -13,6 +13,16 @@ const sliderData = [
   "Италия",
   "Бразилия",
   "Индия",
+  "Россия",
+  "США",
+  "Франция",
+  "Китай",
+  "Корея",
+  "Великобритания",
+  "Испания",
+  "Италия",
+  "Бразилия",
+  "Индия",
 ];
 
 const Headerbar = () => {
@@ -27,7 +37,7 @@ const Headerbar = () => {
       <h1 className="font-bold align-middle text-[40px] leading-[44px]">
         Фильмы смотреть онлайн
       </h1>
-      <div>
+      <div className="mb-4">
         <p
           ref={textRef}
           className="max-w-[910px] text-[15px] text-ellipsis line-clamp-2 opacity-70"
@@ -68,9 +78,13 @@ const Headerbar = () => {
           Развернуть
         </button>
       </div>
-      <CustomSlider id="header-bar" size="default">
+      <CustomSlider
+        id="header-bar"
+        buttonsPosition="outside"
+        slidesWidth="unknown"
+      >
         {sliderData.map((data, idx) => (
-          <CustomButton icon="plus" colorType="default" key={idx}>
+          <CustomButton colorType="filled" key={idx}>
             {data}
           </CustomButton>
         ))}

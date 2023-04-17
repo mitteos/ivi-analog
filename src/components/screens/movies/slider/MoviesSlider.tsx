@@ -9,6 +9,7 @@ const MoviesSlider: React.FC<MoviesSliderProps> = ({
   id,
   children,
   link,
+  lastSlide,
 }) => {
   return (
     <div>
@@ -23,7 +24,12 @@ const MoviesSlider: React.FC<MoviesSliderProps> = ({
         )}
       </div>
 
-      <CustomSlider id={id} size="default">
+      <CustomSlider
+        lastSlide={lastSlide}
+        id={id}
+        slidesWidth="same"
+        buttonsPosition="outside"
+      >
         {children}
       </CustomSlider>
     </div>

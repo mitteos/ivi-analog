@@ -92,19 +92,19 @@ const FilterBar = () => {
         ))}
       </div>
       <div className="flex gap-2 my-6 flex-wrap">
-        <CustomButton icon="plus" colorType="default">
+        <CustomButton icon={<PlusIcon className="w-6" />} colorType="default">
           Бесплатные
         </CustomButton>
-        <CustomButton icon="plus" colorType="default">
+        <CustomButton icon={<PlusIcon className="w-6" />} colorType="default">
           По подписке
         </CustomButton>
-        <CustomButton icon="plus" colorType="default">
+        <CustomButton icon={<PlusIcon className="w-6" />} colorType="default">
           На языке оригинала
         </CustomButton>
-        <CustomButton icon="plus" colorType="default">
+        <CustomButton icon={<PlusIcon className="w-6" />} colorType="default">
           С субтитрами
         </CustomButton>
-        <CustomButton icon="plus" colorType="default">
+        <CustomButton icon={<PlusIcon className="w-6" />} colorType="default">
           Объемный звук
         </CustomButton>
       </div>

@@ -53,9 +53,13 @@ const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
         `}
       >
         {size && (
-          <CustomSlider id="filter" size="small">
+          <CustomSlider
+            id="filter"
+            buttonsPosition="inside"
+            slidesWidth="unknown"
+          >
             {sliderData.map((data, idx) => (
-              <CustomButton icon="plus" colorType="default" key={idx}>
+              <CustomButton colorType="default" key={idx}>
                 {data}
               </CustomButton>
             ))}

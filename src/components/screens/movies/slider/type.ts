@@ -4,4 +4,5 @@ export interface MoviesSliderProps {
   id: string | number;
   children: React.ReactNode[];
   link?: string;
+  lastSlide?: React.ReactNode;
 }

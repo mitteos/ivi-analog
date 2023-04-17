@@ -5,6 +5,7 @@ import Section from "@/components/layout/section/Section";
 import PreviewFilm from "@/components/previews/preview-film/PreviewFilm";
 import PreviewActor from "@/components/previews/preview-actor/PreviewActor";
 import Headerbar from "./headerbar/Headerbar";
+import PreviewFilmLast from "@/components/previews/preview-film-last/PreviewFilmLast";
 
 const title =
   "Смотреть фильмы онлайн бесплатно в хорошем HD качестве и без регистрации. Удобный просмотр онлайн фильмов на ivi.ru";
@@ -55,6 +56,7 @@ const Movies: React.FC<MoviesProps> = () => {
             id="best-films"
             data={sliderData}
             title="Лучшие фильмы"
+            lastSlide={<PreviewFilmLast link="#" />}
           >
             {sliderData.map((data, index) => (
               <PreviewFilm
@@ -87,9 +89,10 @@ const Movies: React.FC<MoviesProps> = () => {
         <Section>
           <MoviesSlider
             link="#"
-            id="best-films"
+            id="ivi-films"
             data={sliderData}
             title="Выбор Иви"
+            lastSlide={<PreviewFilmLast link="#" />}
           >
             {sliderData.map((data, index) => (
               <PreviewFilm
@@ -109,9 +112,10 @@ const Movies: React.FC<MoviesProps> = () => {
         <Section>
           <MoviesSlider
             link="#"
-            id="best-films"
+            id="amedia-films"
             data={sliderData}
             title="Фильмы Amediateka"
+            lastSlide={<PreviewFilmLast link="#" />}
           >
             {sliderData.map((data, index) => (
               <PreviewFilm
