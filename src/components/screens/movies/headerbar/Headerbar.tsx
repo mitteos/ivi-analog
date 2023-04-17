@@ -1,4 +1,19 @@
+import CustomButton from "@/components/customs/custom-button/CustomButton";
+import CustomSlider from "@/components/customs/custom-slider/CustomSlider";
 import { useCallback, useRef } from "react";
+
+const sliderData = [
+  "Россия",
+  "США",
+  "Франция",
+  "Китай",
+  "Корея",
+  "Великобритания",
+  "Испания",
+  "Италия",
+  "Бразилия",
+  "Индия",
+];
 
 const Headerbar = () => {
   const textRef = useRef<HTMLParagraphElement>(null);
@@ -47,12 +62,19 @@ const Headerbar = () => {
           тогда, когда вам это удобно. Ведь это так просто и приятно!
         </p>
         <button
-          className="mt-2 leading-[22px] text-[15px]"
+          className="mt-2 leading-[22px] text-[15px] opacity-90"
           onClick={toggleTextHeight}
         >
           Развернуть
         </button>
       </div>
+      <CustomSlider id="header-bar" size="default">
+        {sliderData.map((data, idx) => (
+          <CustomButton icon="plus" colorType="default" key={idx}>
+            {data}
+          </CustomButton>
+        ))}
+      </CustomSlider>
     </div>
   );
 };
