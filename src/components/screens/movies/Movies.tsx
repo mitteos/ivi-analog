@@ -62,7 +62,7 @@ const Movies: React.FC<MoviesProps> = () => {
               <PreviewFilm
                 img="/images/one-plus-one.jpg"
                 key={index}
-                acception="Бесплатно"
+                access="sub"
                 country="Франция"
                 duration={130}
                 genre="Драмма/Комедия"
@@ -98,7 +98,7 @@ const Movies: React.FC<MoviesProps> = () => {
               <PreviewFilm
                 img="/images/monk.jpg"
                 key={index}
-                acception="Подписка"
+                access="buy"
                 country="Россия"
                 duration={130}
                 genre="Комедия"
@@ -121,7 +121,7 @@ const Movies: React.FC<MoviesProps> = () => {
               <PreviewFilm
                 img="/images/game.jpg"
                 key={index}
-                acception="Подписка"
+                access="free"
                 country="США"
                 duration={130}
                 genre="Документальные"

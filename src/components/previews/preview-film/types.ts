@@ -5,6 +5,8 @@ export interface PreviewFilmProps {
   genre: string;
   duration: number;
   title: string;
-  acception: string;
+  access: PreviewAccessType;
   img: string;
 }
+
+export type PreviewAccessType = "sub" | "buy" | "free";

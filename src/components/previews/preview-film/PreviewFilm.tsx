@@ -3,7 +3,32 @@ import { BookmarkIcon as BookmarkIconOutline } from "@heroicons/react/24/outline
 import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
 import { SparklesIcon as SparklesIconOutline } from "@heroicons/react/24/outline";
 import { NoSymbolIcon as NoSymbolIconOutline } from "@heroicons/react/24/outline";
-import { PreviewFilmProps } from "./types";
+import { PreviewAccessType, PreviewFilmProps } from "./types";
+
+const accessColor = (access: PreviewAccessType) => {
+  switch (access) {
+    case "buy":
+      return "text-[#00a5ff]";
+    case "free":
+      return "opacity-90";
+    case "sub":
+      return "text-[#ea003d]";
+    default:
+      break;
+  }
+};
+const accessText = (access: PreviewAccessType) => {
+  switch (access) {
+    case "buy":
+      return "Покупка";
+    case "free":
+      return "Бесплатно";
+    case "sub":
+      return "Подписка";
+    default:
+      break;
+  }
+};
 
 const PreviewFilm: React.FC<PreviewFilmProps> = ({
   ratio,
@@ -12,7 +37,7 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
   country,
   genre,
   title,
-  acception,
+  access,
   img,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -116,7 +141,9 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
       {/* Название */}
       <div className="text-white mt-2">
         <p className="font-semibold leading-[22px]">{title}</p>
-        <p className="leading-[16px] text-[15px]">{acception}</p>
+        <p className={`leading-[16px] text-[15px] ${accessColor(access)}`}>
+          {accessText(access)}
+        </p>
       </div>
     </div>
   );
