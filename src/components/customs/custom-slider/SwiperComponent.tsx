@@ -45,14 +45,16 @@ const buttonsStyle = (
   let style =
     "absolute outline-none cursor-pointer h-full flex items-center w-[30px] z-20 top-0";
   if (size === "small") {
+    style += " bg-[#312b45]";
     return direction === "prev"
-      ? style + ` custom-swiper-prev-small-${id} -left-[3px] bg-[#312b45]`
-      : style + ` custom-swiper-next-small-${id} -right-[3px] bg-[#312b45]`;
+      ? style + ` custom-swiper-prev-small-${id} -left-[3px]`
+      : style + ` custom-swiper-next-small-${id} -right-[3px]`;
   }
   if (size === "default") {
+    style += " bg-transparent";
     return direction === "prev"
-      ? style + ` custom-swiper-prev-${id} -left-[25px] bg-[#312b45]`
-      : style + ` custom-swiper-next-${id} -right-[25px] bg-[#312b45]`;
+      ? style + ` custom-swiper-prev-${id} -left-[25px]`
+      : style + ` custom-swiper-next-${id} -right-[25px]`;
   }
 };
 
@@ -93,7 +95,7 @@ const SwiperComponent: React.FC<CustomSliderProps> = ({
         <ChevronRightIcon className="text-white w-full" />
       </div>
       <Swiper
-        className="!static !pl-[1%] bg-[cadetblue]"
+        className="!static !pl-[1%]"
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
