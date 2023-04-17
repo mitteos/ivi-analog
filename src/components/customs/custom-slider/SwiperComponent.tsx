@@ -89,7 +89,7 @@ const SwiperComponent: React.FC<CustomSliderProps> = ({
         <ChevronRightIcon className="text-white w-full" />
       </div>
       <Swiper
-        className="!static !pl-[1.5%]"
+        className="!static !pl-[1%]"
         spaceBetween={10}
         allowTouchMove={false}
         slidesPerView={size == "small" ? "auto" : 2}

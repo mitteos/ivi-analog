@@ -82,10 +82,10 @@ const FilterBar = () => {
     <div className="flex flex-col bg-[#1f1b2e]  mx-auto p-4">
       <div
         className="
-        flex flex-col gap-2 
-        sm:flex-row sm:flex-wrap sm:justify-between
-        md:flex-nowrap
-        "
+            flex flex-col gap-2 
+            sm:flex-row sm:flex-wrap sm:justify-between
+            md:flex-nowrap
+            "
       >
         {a.map((data) => (
           <CustomSelect key={data.title} {...data} />
