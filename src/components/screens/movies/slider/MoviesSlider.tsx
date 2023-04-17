@@ -1,28 +1,30 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import Link from "next/link";
 import CustomSlider from "@/components/customs/custom-slider/CustomSlider";
 import { MoviesSliderProps } from "./type";
-import PreviewFilm from "@/components/previews/preview-film/PreviewFilm";
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
 
-const MoviesSlider: React.FC<MoviesSliderProps> = ({ title, data, id }) => {
+const MoviesSlider: React.FC<MoviesSliderProps> = ({
+  title,
+  id,
+  children,
+  link,
+}) => {
   return (
     <div>
-      <Link href="#" className="text-white">
-        <h3>{title}</h3>
-      </Link>
+      <div className="pl-[12px] mb-[12px] text-[24px] font-semibold text-white">
+        {link ? (
+          <Link href={link} className=" flex items-center">
+            <h3>{title}</h3>
+            <ChevronRightIcon className="w-[35px]" />
+          </Link>
+        ) : (
+          <h3>{title}</h3>
+        )}
+      </div>
+
       <CustomSlider id={id} size="default">
-        {data.map((i, idx) => (
-          <PreviewFilm
-            country="Франция"
-            acception="Бесплатно"
-            duration={140}
-            genre="Комедия"
-            year={2012}
-            ratio={9.5}
-            title="Один плюс один"
-            key={idx}
-          />
-        ))}
+        {children}
       </CustomSlider>
     </div>
   );

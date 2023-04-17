@@ -52,13 +52,15 @@ const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
           ${listPositionStyles(size)}
         `}
       >
-        <CustomSlider id="filter" size="small">
-          {sliderData.map((data, idx) => (
-            <CustomButton icon="plus" colorType="default" key={idx}>
-              {data}
-            </CustomButton>
-          ))}
-        </CustomSlider>
+        {size && (
+          <CustomSlider id="filter" size="small">
+            {sliderData.map((data, idx) => (
+              <CustomButton icon="plus" colorType="default" key={idx}>
+                {data}
+              </CustomButton>
+            ))}
+          </CustomSlider>
+        )}
         <ul
           className={`
             transition text-[#d9d7e0cc] list-none

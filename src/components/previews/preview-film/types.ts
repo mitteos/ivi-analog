@@ -6,4 +6,5 @@ export interface PreviewFilmProps {
   duration: number;
   title: string;
   acception: string;
+  img: string;
 }

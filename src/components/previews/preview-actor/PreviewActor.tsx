@@ -6,14 +6,16 @@ const PreviewActor: React.FC<PreviewActorProps> = ({
   firstName,
   secondName,
   films,
+  img,
 }) => {
   return (
-    <div className="my-5 flex flex-col w-auto">
+    <div className="flex flex-col w-auto">
       {/* аватарка актера */}
       <div
+        style={{ backgroundImage: `url('${img}')` }}
         className={`
           relative  h-[150px] w-[150px] rounded-full cursor-pointer bg-cover bg-no-repeat
-          bg-[url('/images/actor.jpg')] transition hover:scale-[1.05] group/preview  bg-center
+          transition hover:scale-[1.05] group/preview  bg-center
         `}
       >
         <span

@@ -34,7 +34,7 @@ const breakpoints = (size: "small" | "default"): {} => {
 };
 
 const slideStyle = (size: SizeType) => {
-  return size === "small" ? "!w-auto" : size === "default" ? "" : "";
+  return size === "small" ? "!w-auto" : size === "default" ? "pt-2" : "";
 };
 
 const buttonsStyle = (
@@ -81,7 +81,7 @@ const SwiperComponent: React.FC<CustomSliderProps> = ({
   id,
 }) => {
   return (
-    <div className="relative mt-10 mb-10">
+    <div className="relative">
       <div className={buttonsStyle(size, "prev", id)}>
         <ChevronLeftIcon className="text-white w-full" />
       </div>

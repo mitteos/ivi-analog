@@ -13,6 +13,7 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
   genre,
   title,
   acception,
+  img,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -62,10 +63,11 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
   }, []);
 
   return (
-    <div className="my-5 flex flex-col w-auto">
+    <div className="flex flex-col w-auto">
       {/* Постер */}
       <div
-        className={`relative w-[150px] h-[230px] cursor-pointer bg-[url('/images/one-plus-one.jpg')]
+        style={{ backgroundImage: `url('${img}')` }}
+        className={`relative w-[150px] h-[230px] cursor-pointer 
          transition hover:scale-[1.05] group/preview rounded-md bg-cover bg-center
       `}
       >
