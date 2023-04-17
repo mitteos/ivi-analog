@@ -46,24 +46,27 @@ const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
       <div
         ref={ref}
         className={`
-          flex flex-col p-4 w-full 
+          flex flex-col p-4 ${!size ? "pt-1" : ""} w-full 
           absolute bg-[#312b45] top-[58px] rounded-md z-30 
           sm:group-odd/list:left-0 sm:group-even/list:right-0
           ${listPositionStyles(size)}
         `}
       >
         {size && (
-          <CustomSlider
-            id="filter"
-            buttonsPosition="inside"
-            slidesWidth="unknown"
-          >
-            {sliderData.map((data, idx) => (
-              <CustomButton colorType="default" key={idx}>
-                {data}
-              </CustomButton>
-            ))}
-          </CustomSlider>
+          <>
+            <CustomSlider
+              id="filter"
+              buttonsPosition="inside"
+              slidesWidth="unknown"
+            >
+              {sliderData.map((data, idx) => (
+                <CustomButton colorType="default" key={idx}>
+                  {data}
+                </CustomButton>
+              ))}
+            </CustomSlider>
+            <div className="w-full mt-[12px] border-b-[1px] border-white opacity-50" />
+          </>
         )}
         <ul
           className={`

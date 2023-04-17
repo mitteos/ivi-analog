@@ -39,6 +39,7 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
   title,
   access,
   img,
+  iviChoice,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -96,6 +97,7 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
          transition hover:scale-[1.05] group/preview rounded-md bg-cover bg-center
       `}
       >
+        {iviChoice && <div></div>}
         {/* Дополнительная информация */}
         <div
           className="

@@ -7,6 +7,7 @@ export interface PreviewFilmProps {
   title: string;
   access: PreviewAccessType;
   img: string;
+  iviChoice?: boolean;
 }
 
 export type PreviewAccessType = "sub" | "buy" | "free";
