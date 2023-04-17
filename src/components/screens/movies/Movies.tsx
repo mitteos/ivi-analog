@@ -8,6 +8,7 @@ import Headerbar from "./headerbar/Headerbar";
 import PreviewFilmLast from "@/components/previews/preview-film-last/PreviewFilmLast";
 import PreviewGenre from "@/components/previews/preview-genre/PreviewGenre";
 import { GlobeAltIcon } from "@heroicons/react/20/solid";
+import PreviewCollection from "@/components/previews/preview-collection/PreviewCollection";
 
 const title =
   "Смотреть фильмы онлайн бесплатно в хорошем HD качестве и без регистрации. Удобный просмотр онлайн фильмов на ivi.ru";
@@ -45,9 +46,28 @@ const Movies: React.FC<MoviesProps> = () => {
           <FilterBar></FilterBar>
         </Section>
         <Section>
+          <MoviesSlider
+            link="#"
+            id="collections"
+            data={sliderData}
+            title="Фильмы-новинки"
+          >
+            {sliderData.map((data, index) => (
+              <PreviewCollection
+                key={index}
+                link="#"
+                title="Зарубежные новинки"
+                img="/images/films-collection.png"
+              />
+            ))}
+          </MoviesSlider>
+        </Section>
+        <Section>
           <MoviesSlider link="#" id="genres" data={sliderData} title="Жанры">
             {sliderData.map((data, index) => (
               <PreviewGenre
+                key={index}
+                link="#"
                 title="Зарубежные"
                 icon={<GlobeAltIcon className="w-[40px]" />}
               />
