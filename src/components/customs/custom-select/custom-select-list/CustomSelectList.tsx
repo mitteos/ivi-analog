@@ -55,9 +55,9 @@ const CustomSelectList = forwardRef<HTMLDivElement, CustomSelectListProps>(
         {size && (
           <>
             <CustomSlider
+              slidesPerView="auto"
               id="filter"
               buttonsPosition="inside"
-              slidesWidth="unknown"
             >
               {sliderData.map((data, idx) => (
                 <CustomButton colorType="default" key={idx}>

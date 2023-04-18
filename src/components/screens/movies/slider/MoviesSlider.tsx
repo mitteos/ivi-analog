@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import Link from "next/link";
 import CustomSlider from "@/components/customs/custom-slider/CustomSlider";
 import { MoviesSliderProps } from "./type";
@@ -10,10 +10,11 @@ const MoviesSlider: React.FC<MoviesSliderProps> = ({
   children,
   link,
   lastSlide,
+  slidesPerView,
 }) => {
   return (
     <div>
-      <div className="pl-[12px] mb-[12px] text-[24px] font-semibold text-white">
+      <div className="pl-[12px] mb-[12px] text-xl font-semibold text-white">
         {link ? (
           <Link href={link} className=" flex items-center">
             <h3>{title}</h3>
@@ -25,9 +26,9 @@ const MoviesSlider: React.FC<MoviesSliderProps> = ({
       </div>
 
       <CustomSlider
+        slidesPerView={slidesPerView}
         lastSlide={lastSlide}
         id={id}
-        slidesWidth="same"
         buttonsPosition="outside"
       >
         {children}

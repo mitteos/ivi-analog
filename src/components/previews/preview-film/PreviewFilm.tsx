@@ -4,6 +4,7 @@ import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
 import { SparklesIcon as SparklesIconOutline } from "@heroicons/react/24/outline";
 import { NoSymbolIcon as NoSymbolIconOutline } from "@heroicons/react/24/outline";
 import { PreviewAccessType, PreviewFilmProps } from "./types";
+import Image from "next/image";
 
 const accessColor = (access: PreviewAccessType) => {
   switch (access) {
@@ -87,16 +88,23 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
       });
     };
   }, []);
-
+  // w-[150px] h-[230px]
   return (
-    <div className="flex flex-col w-auto">
+    <div className="flex flex-col  w-full h-full">
       {/* Постер */}
       <div
-        style={{ backgroundImage: `url('${img}')` }}
-        className={`relative w-[150px] h-[230px] cursor-pointer 
+        // style={{ backgroundImage: `url('${img}')` }}
+        className={`relative cursor-pointer max-w-[150px]
          transition hover:scale-[1.05] group/preview rounded-md bg-cover bg-center
       `}
       >
+        <Image
+          src={img}
+          alt="постер"
+          width={150}
+          height={230}
+          className="rounded-md inline-block"
+        />
         {/* плашка "выбор иви" */}
         {iviChoice && (
           <div className="absolute top-2 -left-2 text-sm font-bold py-[2px] z-[3] px-2 rounded-full text-white bg-[#ea003d] shadow-[0_2px_8px_rgba(234,0,61,.8)]">

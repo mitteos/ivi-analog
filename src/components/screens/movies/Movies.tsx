@@ -9,6 +9,7 @@ import PreviewFilmLast from "@/components/previews/preview-film-last/PreviewFilm
 import PreviewGenre from "@/components/previews/preview-genre/PreviewGenre";
 import { GlobeAltIcon } from "@heroicons/react/20/solid";
 import PreviewCollection from "@/components/previews/preview-collection/PreviewCollection";
+import PreviewRatio from "@/components/previews/preview-ratio/PreviewRatio";
 
 const title =
   "Смотреть фильмы онлайн бесплатно в хорошем HD качестве и без регистрации. Удобный просмотр онлайн фильмов на ivi.ru";
@@ -49,8 +50,8 @@ const Movies: React.FC<MoviesProps> = () => {
           <MoviesSlider
             link="#"
             id="collections"
-            data={sliderData}
             title="Фильмы-новинки"
+            slidesPerView={4}
           >
             {sliderData.map((data, index) => (
               <PreviewCollection
@@ -63,7 +64,7 @@ const Movies: React.FC<MoviesProps> = () => {
           </MoviesSlider>
         </Section>
         <Section>
-          <MoviesSlider link="#" id="genres" data={sliderData} title="Жанры">
+          <MoviesSlider link="#" id="genres" title="Жанры" slidesPerView={7}>
             {sliderData.map((data, index) => (
               <PreviewGenre
                 key={index}
@@ -76,9 +77,9 @@ const Movies: React.FC<MoviesProps> = () => {
         </Section>
         <Section>
           <MoviesSlider
+            slidesPerView={7}
             link="#"
             id="best-films"
-            data={sliderData}
             title="Лучшие фильмы"
             lastSlide={<PreviewFilmLast link="#" />}
           >
@@ -98,7 +99,19 @@ const Movies: React.FC<MoviesProps> = () => {
           </MoviesSlider>
         </Section>
         <Section>
-          <MoviesSlider id="actors" data={sliderData} title="Персоны">
+          <MoviesSlider slidesPerView={7} id="ratio" title="Рейтинг Иви">
+            {sliderData.slice(0, 5).map((data, index) => (
+              <PreviewRatio
+                img="/images/ratio.jpg"
+                key={index}
+                link="#"
+                title="Лучшая режиссура"
+              />
+            ))}
+          </MoviesSlider>
+        </Section>
+        <Section>
+          <MoviesSlider slidesPerView={7} id="actors" title="Персоны">
             {sliderData.map((data, index) => (
               <PreviewActor
                 img="/images/actor.jpg"
@@ -112,9 +125,9 @@ const Movies: React.FC<MoviesProps> = () => {
         </Section>
         <Section>
           <MoviesSlider
+            slidesPerView={7}
             link="#"
             id="ivi-films"
-            data={sliderData}
             title="Выбор Иви"
             lastSlide={<PreviewFilmLast link="#" />}
           >
@@ -136,9 +149,9 @@ const Movies: React.FC<MoviesProps> = () => {
         </Section>
         <Section>
           <MoviesSlider
+            slidesPerView={7}
             link="#"
             id="amedia-films"
-            data={sliderData}
             title="Фильмы Amediateka"
             lastSlide={<PreviewFilmLast link="#" />}
           >

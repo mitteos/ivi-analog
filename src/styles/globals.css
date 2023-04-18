@@ -13,7 +13,7 @@ body {
 /* ['10px', '13px', '15px', '16px', '17px', '20px', '24px', '32px', '56px'] */
 
 .page-container {
-  @apply max-w-[1240px] mx-auto;
+  @apply max-w-screen-xl mx-auto;
 }
 
 .swiper-button-disabled {

@@ -8,18 +8,19 @@ const PreviewCollection: React.FC<PreviewCollectionProps> = ({
   title,
   img,
 }) => {
+  // h-[185px] w-[275px]
   return (
     <Link href={link}>
       <div
         className="
-        h-[200px] w-[290px] rounded-md bg-[#1f1b2e]  p-2
+        rounded-md bg-[#1f1b2e]  p-2
         flex justify-center items-center"
       >
         <Image
           alt="коллекция"
           src={img}
-          width={290}
-          height={200}
+          width={295}
+          height={185}
           className="rounded-sm"
         />
       </div>

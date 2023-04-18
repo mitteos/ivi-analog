@@ -79,9 +79,9 @@ const Headerbar = () => {
         </button>
       </div>
       <CustomSlider
+        slidesPerView="auto"
         id="header-bar"
         buttonsPosition="outside"
-        slidesWidth="unknown"
       >
         {sliderData.map((data, idx) => (
           <CustomButton colorType="filled" key={idx}>

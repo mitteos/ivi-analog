@@ -4,10 +4,10 @@ export default interface CustomSliderProps {
   children: React.ReactNode[];
   id: string | number;
   buttonsPosition: ButtonsPositionType;
-  slidesWidth: SlidesWidthType;
   lastSlide?: React.ReactNode;
+  slidesPerView: SlidesPerViewType;
 }
 
 export type SizeType = "small" | "default";
 export type ButtonsPositionType = "inside" | "outside";
-export type SlidesWidthType = "same" | "unknown";
+export type SlidesPerViewType = number | "auto";
