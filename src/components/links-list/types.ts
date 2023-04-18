@@ -3,6 +3,7 @@ export type LinkType = {
   path: string;
   title?: string;
   isExternal: boolean;
+  hasGradient?: boolean;
 };
 
 export type LinksListProps = {
