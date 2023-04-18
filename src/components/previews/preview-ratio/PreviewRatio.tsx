@@ -6,7 +6,7 @@ import Link from "next/link";
 const PreviewRatio: React.FC<PreviewRatioProps> = ({ title, link, img }) => {
   return (
     <Link href={link}>
-      <div className="max-w-[170px] rounded-md overflow-hidden relative">
+      <div className="max-w-[170px] max-h-[105px] rounded-md overflow-hidden relative">
         <Image src={img} alt="рейтинг" width={157} height={108} />
         <div
           className="

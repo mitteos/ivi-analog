@@ -25,7 +25,7 @@ const PreviewActor: React.FC<PreviewActorProps> = ({
       {/* аватарка актера */}
       <div
         className={`
-          relative max-w-[150px] rounded-full cursor-pointer overflow-hidden
+          relative max-w-[153px] rounded-full cursor-pointer overflow-hidden
           transition hover:scale-[1.05] flex justify-center items-center
           before:block before:w-[100%] pt-[100%]
         `}
@@ -33,8 +33,8 @@ const PreviewActor: React.FC<PreviewActorProps> = ({
         <Image
           src={img}
           alt="актер"
-          width={150}
-          height={150}
+          width={153}
+          height={153}
           className="absolute top-0 left-0 bottom-0 right-0"
         />
       </div>

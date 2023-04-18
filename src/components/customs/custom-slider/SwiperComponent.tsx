@@ -60,7 +60,7 @@ const SwiperComponent: React.FC<CustomSliderProps> = ({
       </div>
       <Swiper
         className={`!static ${slidesPerView === "auto" ? "" : "!pl-[1.5%]"}`}
-        spaceBetween={10}
+        spaceBetween={20}
         allowTouchMove={false}
         slidesPerView={"auto"}
         navigation={{
