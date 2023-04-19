@@ -17,14 +17,6 @@ const meta: Meta<typeof SearchBtn> = {
 export default meta;
 type Story = StoryObj<typeof SearchBtn>;
 
-export const Large: Story = {
-  args: {
-    type: 'large',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    type: 'small',
-  },
+export const Base: Story = {
+  args: {},
 };
