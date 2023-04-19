@@ -163,3 +163,6 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.swiper-button-disabled {
+  display: none;}

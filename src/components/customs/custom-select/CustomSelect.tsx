@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { BsChevronDown } from "react-icons/bs";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import CustomSelectList from "./custom-select-list/CustomSelectList";
 import CustomSelectProps from "./types";
 
@@ -8,7 +8,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   size,
   options,
 }) => {
-  const [selectedValue, setSelectedValue] = useState<null | string>(null);
   const [showList, setShowList] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
   const selectedRef = useRef<HTMLDivElement>(null);
@@ -52,17 +51,19 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
           text-white rounded-md px-4 font-semibold
         `}
       >
-        <p ref={selectTitleRef}>{selectedValue ?? title}</p>
-        <BsChevronDown
-          className={`transition ${showList ? "rotate-180" : "rotate-0"}`}
+        <p ref={selectTitleRef}>{title}</p>
+        <ChevronDownIcon
+          className={`transition ${showList ? "rotate-180" : "rotate-0"} w-8`}
         />
       </div>
-      <CustomSelectList
-        options={options}
-        size={size}
-        visible={showList}
-        ref={listRef}
-      />
+      {showList && (
+        <CustomSelectList
+          options={options}
+          size={size}
+          visible={showList}
+          ref={listRef}
+        />
+      )}
     </div>
   );
 };

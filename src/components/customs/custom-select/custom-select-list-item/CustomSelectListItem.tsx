@@ -1,6 +1,5 @@
 import React from "react";
-import { BsCheckLg } from "react-icons/bs";
-import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi";
+import { CheckIcon } from "@heroicons/react/20/solid";
 import CustomSelectListItemProps from "./types";
 
 const CustomSelectListItem: React.FC<CustomSelectListItemProps> = ({
@@ -11,10 +10,8 @@ const CustomSelectListItem: React.FC<CustomSelectListItemProps> = ({
     <li className="w-full mt-[12px] flex justify-between group/list-item cursor-pointer">
       <p>{label}</p>
       {icon === "check" ? (
-        <BsCheckLg className="transition opacity-0 group-hover/list-item:opacity-100" />
-      ) : (
-        <BiRadioCircle />
-      )}
+        <CheckIcon className="transition opacity-0 group-hover/list-item:opacity-100 w-5" />
+      ) : null}
     </li>
   );
 };
