@@ -6,8 +6,8 @@ import Link from "next/link";
 const PreviewRatio: React.FC<PreviewRatioProps> = ({ title, link, img }) => {
   return (
     <Link href={link}>
-      <div className="max-w-[170px] max-h-[105px] rounded-md overflow-hidden relative">
-        <Image src={img} alt="рейтинг" width={157} height={108} />
+      <div className="max-w-[150px] max-h-[105px] rounded-md overflow-hidden relative">
+        <Image src={img} alt="рейтинг" width={150} height={108} />
         <div
           className="
         text-white flex justify-center items-end gap-1

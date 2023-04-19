@@ -66,7 +66,7 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
       tooltipElem.style.top = top + "px";
     };
 
-    const mouseoutHandler = (e: MouseEvent) => {
+    const mouseoutHandler = () => {
       if (tooltipElem) {
         tooltipElem.remove();
         tooltipElem = null;
@@ -88,12 +88,10 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
       });
     };
   }, []);
-  // w-[150px] h-[230px]
   return (
     <div className="flex flex-col  w-full h-full">
       {/* Постер */}
       <div
-        // style={{ backgroundImage: `url('${img}')` }}
         className={`relative cursor-pointer max-w-[150px]
          transition hover:scale-[1.05] group/preview rounded-md bg-cover bg-center
       `}
