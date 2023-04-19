@@ -77,7 +77,7 @@ const HeaderContent = () => {
             )}
           </div>
 
-          {isLargeScreen ? <DynamicSearchBtn type='large' /> : null}
+          {isLargeScreen ? <DynamicSearchBtn /> : null}
 
           {isMobileScreen ? null : (
             <DynamicNotificationBtn

@@ -29,13 +29,17 @@ body {
   @apply max-w-[1304px] mx-auto;
 }
 
+.page-footer-container {
+  @apply max-w-[1304px] mx-auto;
+}
+
 @layer components {
-  .header-link {
-    @apply text-[15px] font-normal text-white/[.48] hover:text-white focus:text-white active:text-white/[.48] transition-all duration-300 outline-none;
+  .link {
+    @apply text-[15px] font-normal text-white hover:text-white/[.48] focus:text-white/[.48] active:text-white transition-all duration-300 outline-none;
   }
 
-  .small-header-link {
-    @apply flex flex-col items-center w-16 h-12 text-[10px] font-bold leading-3 text-white/[.48] hover:text-white focus:text-white active:text-white/[.48] transition-all duration-300 outline-none
+  .header-link {
+    @apply text-[15px] font-normal text-white/[.48] hover:text-white focus:text-white active:text-white/[.48] transition-all duration-300 outline-none;
   }
 
   .link-list-title {
@@ -61,6 +65,62 @@ body {
   .profile-tile-small {
     @apply text-[13px] font-bold text-white/[.48] 
   }
+
+  .footer-social {
+    @apply flex justify-center items-center w-10 h-10 rounded-full bg-[#1f1b2e] hover:bg-[#2e2844] focus:bg-[#2e2844] active:bg-[#0e0c14] transition-all duration-300 outline-none
+  }
+  
+  .footer-social-img {
+    @apply w-4 h-4
+  }
+
+  .footer-button {
+    @apply flex items-center justify-center rounded-lg text-[15px] text-white font-bold bg-[#1f1b2e] hover:bg-[#2e2844] focus:bg-[#2e2844] active:bg-[#0e0c14] transition-all duration-300 outline-none
+  }
+
+  .footer-subscription-link {
+    @apply bg-gradient-to-b from-[#A869F0] to-[#834CC2] shadow-[0_0_104px_#A869F0]
+  }
+
+  .footer-tab {
+    @apply flex flex-col items-center w-16 h-12 text-[10px] font-bold leading-3 outline-none
+  }
+}
+
+.mobile-footer {
+  display: flex;
+  justify-content: center;
+
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background-color: rgba(31,27,46,.88);
+  box-shadow: 0 -20px 40px rgba(7,5,14,.24);
+}
+
+.footer-tab-item { 
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  max-width: 120px;
+  padding-bottom: 4px;
+  padding-top: 8px;
+  
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link-with-gradient {    
+  background-image: -webkit-linear-gradient(135deg,#c447ff,#ea003d);
+  background-image: -o-linear-gradient(135deg,#c447ff,#ea003d);
+  background-image: linear-gradient(-45deg,#c447ff,#ea003d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .loader,

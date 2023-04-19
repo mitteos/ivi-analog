@@ -875,5 +875,6 @@ export const footerSectionsLinks: LinkType[] = [
     text: 'Активация сертификата',
     path: 'https://www.ivi.ru/cert',
     isExternal: true,
+    hasGradient: true,
   },
 ];

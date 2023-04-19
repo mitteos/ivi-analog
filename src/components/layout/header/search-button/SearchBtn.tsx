@@ -1,28 +1,18 @@
-export type SearchButtonProps = {
-  type: 'large' | 'small';
-};
-
-//TODO clickHandler
-
-const SearchBtn: React.FC<SearchButtonProps> = ({ type }) => {
-  const btnStyles =
-    type === 'large'
-      ? 'header-link flex justify-between items-center w-[70px] h-10 py-[10px] font-bold'
-      : 'small-header-link';
-
-  const iconStyles = type === 'large' ? 'w-4 h-4' : 'w-[20px] h-[20px]';
-
+const SearchBtn: React.FC = () => {
   return (
     <div className='flex h-full items-center'>
-      <button className={btnStyles} type='button'>
-        <span className={iconStyles}>
+      <button
+        className='header-link flex justify-between items-center w-[70px] h-10 py-[10px] font-bold'
+        type='button'
+      >
+        <span className='w-4 h-4'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
             strokeWidth={3}
             stroke='currentColor'
-            className={iconStyles}
+            className='w-4 h-4'
           >
             <path
               strokeLinecap='round'
@@ -31,7 +21,7 @@ const SearchBtn: React.FC<SearchButtonProps> = ({ type }) => {
             />
           </svg>
         </span>
-        <span className={`${type === 'small' ? 'mt-[4px]' : ''}`}>Поиск</span>
+        <span>Поиск</span>
       </button>
     </div>
   );
