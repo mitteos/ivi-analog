@@ -129,6 +129,7 @@ body {
   width: 20px;
   height: 20px;
 }
+
 .loader {
   font-size: 10px;
   position: absolute;
@@ -143,6 +144,7 @@ body {
   -webkit-animation: load8 0.5s infinite linear;
   animation: load8 0.5s infinite linear;
 }
+
 @-webkit-keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -153,6 +155,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
 @keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -165,4 +168,27 @@ body {
 }
 
 .swiper-button-disabled {
-  display: none;}
+  display: none;
+}
+
+.drawer {
+  /* -webkit-overflow-scrolling: touch; */
+  /* display: none; */
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+
+  background-color: #100e19;
+  overflow: hidden;
+  overflow-y: auto;
+
+  scroll-behavior: smooth;
+}
+
+.drawer-container {
+  padding: 32px;
+}
