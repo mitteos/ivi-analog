@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import {
   footerAboutLinks,
   footerSectionsLinks,
@@ -153,7 +155,13 @@ const FooterContent = () => {
                 rel='noopener noreferrer'
               >
                 <FooterButton size='middle' isWrappedByLink>
-                  <img src='/apple-logo.svg' />
+                  <Image
+                    src='/apple-logo.svg'
+                    alt='apple logo'
+                    width={20}
+                    height={20}
+                  />
+
                   <div className='flex flex-col items-start  ml-2'>
                     <span className='text-[10px] leading-[12px] font-normal'>
                       Загрузить в
@@ -172,7 +180,13 @@ const FooterContent = () => {
                 rel='noopener noreferrer'
               >
                 <FooterButton size='middle' isWrappedByLink>
-                  <img src='/googleplay-logo.svg' />
+                  <Image
+                    src='/googleplay-logo.svg'
+                    alt='googleplay logo'
+                    width={20}
+                    height={20}
+                  />
+
                   <div className='flex flex-col items-start ml-2'>
                     <span className='text-[10px] leading-[12px] font-normal'>
                       Доступно в
