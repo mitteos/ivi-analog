@@ -1,23 +1,12 @@
 import React from "react";
-import { IoMdAdd } from "react-icons/io";
-import CustomButtonProps from "./types";
+import CustomButtonProps, { ButtonColorType } from "./types";
 
-const getColors = (colorType: string) => {
+const getColors = (colorType: ButtonColorType) => {
   switch (colorType) {
-    case "gradient":
-      return;
+    case "filled":
+      return "bg-[#312b45] opacity-90 hover:opacity-100 transition";
     default:
-      return "text-white border-2 border-white rounded-full";
-  }
-};
-
-const getIcon = (iconType: string | undefined) => {
-  switch (iconType) {
-    case "plus":
-      return <IoMdAdd size={20} />;
-
-    default:
-      return null;
+      return "border-[0.5px] border-white";
   }
 };
 
@@ -30,9 +19,9 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     <button
       className={`${getColors(
         colorType
-      )} flex px-5 py-2 items-center justify-center gap-1 `}
+      )} flex px-3 py-[6px] items-center justify-center gap-1 text-sm rounded-full text-white `}
     >
-      {getIcon(icon)}
+      {icon}
       <p>{children}</p>
     </button>
   );
