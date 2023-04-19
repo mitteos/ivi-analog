@@ -1,14 +1,27 @@
+import dynamic from 'next/dynamic';
+import { useMediaQuery } from 'react-responsive';
 import Meta, { MetaProps } from '../seo/Meta';
-import Footer from './footer/Footer';
 import Header from './header/Header';
 
+const DynamicFooter = dynamic(() => import('./footer/Footer'), {
+  ssr: false,
+});
+
+const DynamicMobileFooter = dynamic(() => import('./footer/MobileFooter'), {
+  ssr: false,
+});
+
 const Layout: React.FC<MetaProps> = ({ title, description, children }) => {
+  const isLargeScreen = useMediaQuery({
+    query: '(min-width: 1160px)',
+  });
+
   return (
     <Meta title={title} description={description}>
-      <div className='h-screen grid grid-rows-layout'>
+      <div className='relative h-screen grid grid-rows-layout'>
         <Header />
         <main>{children}</main>
-        <Footer />
+        {isLargeScreen ? <DynamicFooter /> : <DynamicMobileFooter />}
       </div>
     </Meta>
   );
