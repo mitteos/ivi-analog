@@ -34,7 +34,7 @@ const Headerbar = () => {
 
   return (
     <div className="text-white">
-      <h1 className="font-bold align-middle text-[40px] leading-[44px]">
+      <h1 className="font-bold align-middle text-[40px] leading-[44px] mb-3">
         Фильмы смотреть онлайн
       </h1>
       <div className="mb-4">

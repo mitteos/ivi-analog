@@ -119,7 +119,6 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
         "
         >
           {/* Кнопки на постере */}
-          {/* <div className="flex justify-between"> */}
           <div className="flex flex-col gap-2 absolute top-2 right-2" ref={ref}>
             <div data-title="Смотреть позже">
               <BookmarkIconOutline className="text-white w-6 stroke-[3]" />
@@ -134,7 +133,6 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
               <NoSymbolIconOutline className="text-white w-6 stroke-[3]" />
             </div>
           </div>
-          {/* </div> */}
 
           {/* Описание */}
           <div className="text-white flex flex-col text-[13px]">

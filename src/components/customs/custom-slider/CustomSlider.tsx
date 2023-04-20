@@ -21,7 +21,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
   return (
     <div>
       {title && (
-        <div className="pl-[10px] mb-[12px] text-xl font-semibold text-white">
+        <div className="pl-3 mb-[12px] text-xl font-semibold text-white">
           {link ? (
             <Link href={link} className=" flex items-center">
               <h3>{title}</h3>

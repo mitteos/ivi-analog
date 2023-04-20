@@ -46,7 +46,7 @@ const Movies: React.FC<MoviesProps> = () => {
         <Section>
           <FilterBar></FilterBar>
         </Section>
-        <Section>
+        <Section withoutPadding>
           <CustomSlider
             link="#"
             id="collections"
@@ -64,7 +64,7 @@ const Movies: React.FC<MoviesProps> = () => {
             ))}
           </CustomSlider>
         </Section>
-        <Section>
+        <Section withoutPadding>
           <CustomSlider
             link="#"
             id="genres"
@@ -82,7 +82,7 @@ const Movies: React.FC<MoviesProps> = () => {
             ))}
           </CustomSlider>
         </Section>
-        <Section>
+        <Section withoutPadding>
           <CustomSlider
             buttonsPosition="outside"
             slidesPerView={7}
@@ -106,7 +106,7 @@ const Movies: React.FC<MoviesProps> = () => {
             ))}
           </CustomSlider>
         </Section>
-        <Section>
+        <Section withoutPadding>
           <CustomSlider
             slidesPerView={7}
             id="ratio"
@@ -123,7 +123,7 @@ const Movies: React.FC<MoviesProps> = () => {
             ))}
           </CustomSlider>
         </Section>
-        <Section>
+        <Section withoutPadding>
           <CustomSlider
             slidesPerView={7}
             id="actors"
@@ -141,7 +141,7 @@ const Movies: React.FC<MoviesProps> = () => {
             ))}
           </CustomSlider>
         </Section>
-        <Section>
+        <Section withoutPadding>
           <CustomSlider
             buttonsPosition="outside"
             slidesPerView={7}
@@ -166,7 +166,7 @@ const Movies: React.FC<MoviesProps> = () => {
             ))}
           </CustomSlider>
         </Section>
-        <Section>
+        <Section withoutPadding>
           <CustomSlider
             buttonsPosition="outside"
             slidesPerView={7}
