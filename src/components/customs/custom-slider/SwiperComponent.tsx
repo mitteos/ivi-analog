@@ -5,7 +5,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import CustomSliderProps, {
+import {
+  SwiperComponentProps,
   ButtonsPositionType,
   SlidesPerViewType,
 } from "./types";
@@ -43,7 +44,7 @@ const navBubbton = (direction: "prev" | "next", id: number | string) =>
     ? `.custom-swiper-prev-${id}`
     : `.custom-swiper-next-${id}`;
 
-const SwiperComponent: React.FC<CustomSliderProps> = ({
+const SwiperComponent: React.FC<SwiperComponentProps> = ({
   children,
   id,
   buttonsPosition,

@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import FilterBar from "./filterbar/FilterBar";
-import MoviesSlider from "./slider/MoviesSlider";
+import CustomSlider from "@/components/customs/custom-slider/CustomSlider";
 import Section from "@/components/layout/section/Section";
 import PreviewFilm from "@/components/previews/preview-film/PreviewFilm";
 import PreviewActor from "@/components/previews/preview-actor/PreviewActor";
@@ -47,11 +47,12 @@ const Movies: React.FC<MoviesProps> = () => {
           <FilterBar></FilterBar>
         </Section>
         <Section>
-          <MoviesSlider
+          <CustomSlider
             link="#"
             id="collections"
             title="Фильмы-новинки"
             slidesPerView={4}
+            buttonsPosition="outside"
           >
             {sliderData.map((data, index) => (
               <PreviewCollection
@@ -61,10 +62,16 @@ const Movies: React.FC<MoviesProps> = () => {
                 img="/images/films-collection.png"
               />
             ))}
-          </MoviesSlider>
+          </CustomSlider>
         </Section>
         <Section>
-          <MoviesSlider link="#" id="genres" title="Жанры" slidesPerView={7}>
+          <CustomSlider
+            link="#"
+            id="genres"
+            title="Жанры"
+            slidesPerView={7}
+            buttonsPosition="outside"
+          >
             {sliderData.map((data, index) => (
               <PreviewGenre
                 key={index}
@@ -73,10 +80,11 @@ const Movies: React.FC<MoviesProps> = () => {
                 icon={<GlobeAltIcon className="w-[40px]" />}
               />
             ))}
-          </MoviesSlider>
+          </CustomSlider>
         </Section>
         <Section>
-          <MoviesSlider
+          <CustomSlider
+            buttonsPosition="outside"
             slidesPerView={7}
             link="#"
             id="best-films"
@@ -96,10 +104,15 @@ const Movies: React.FC<MoviesProps> = () => {
                 year={2008}
               />
             ))}
-          </MoviesSlider>
+          </CustomSlider>
         </Section>
         <Section>
-          <MoviesSlider slidesPerView={7} id="ratio" title="Рейтинг Иви">
+          <CustomSlider
+            slidesPerView={7}
+            id="ratio"
+            title="Рейтинг Иви"
+            buttonsPosition="outside"
+          >
             {sliderData.slice(0, 5).map((data, index) => (
               <PreviewRatio
                 img="/images/ratio.jpg"
@@ -108,10 +121,15 @@ const Movies: React.FC<MoviesProps> = () => {
                 title="Лучшая режиссура"
               />
             ))}
-          </MoviesSlider>
+          </CustomSlider>
         </Section>
         <Section>
-          <MoviesSlider slidesPerView={7} id="actors" title="Персоны">
+          <CustomSlider
+            slidesPerView={7}
+            id="actors"
+            title="Персоны"
+            buttonsPosition="outside"
+          >
             {sliderData.map((data, index) => (
               <PreviewActor
                 img="/images/actor.jpg"
@@ -121,10 +139,11 @@ const Movies: React.FC<MoviesProps> = () => {
                 films={11}
               />
             ))}
-          </MoviesSlider>
+          </CustomSlider>
         </Section>
         <Section>
-          <MoviesSlider
+          <CustomSlider
+            buttonsPosition="outside"
             slidesPerView={7}
             link="#"
             id="ivi-films"
@@ -145,10 +164,11 @@ const Movies: React.FC<MoviesProps> = () => {
                 iviChoice
               />
             ))}
-          </MoviesSlider>
+          </CustomSlider>
         </Section>
         <Section>
-          <MoviesSlider
+          <CustomSlider
+            buttonsPosition="outside"
             slidesPerView={7}
             link="#"
             id="amedia-films"
@@ -168,7 +188,7 @@ const Movies: React.FC<MoviesProps> = () => {
                 year={2019}
               />
             ))}
-          </MoviesSlider>
+          </CustomSlider>
         </Section>
       </div>
     </Layout>
