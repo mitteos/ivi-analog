@@ -113,41 +113,41 @@ const PreviewFilm: React.FC<PreviewFilmProps> = ({
         <div
           className="
           absolute transition 
-          w-full h-full top-0 left-0 flex flex-col 
+          w-full h-full top-0 left-0 flex items-end
           opacity-0 group-hover/preview:opacity-100 rounded-md
-          group-hover/preview:bg-[rgba(0,0,0,0.5)] z-[2] p-3
+          group-hover/preview:bg-[rgba(0,0,0,0.5)] z-[2] p-2
         "
         >
           {/* Кнопки на постере */}
-          <div className="flex justify-between">
-            <div className="text-white flex items-end text-[22px]">{ratio}</div>
-            <div className="flex flex-col gap-2" ref={ref}>
-              <div data-title="Смотреть позже">
-                <BookmarkIconOutline className="text-white w-6 stroke-[3]" />
-              </div>
-              <div data-title="Похожее">
-                <SparklesIconOutline className="text-white w-6 stroke-[2]" />
-              </div>
-              <div data-title="Оценить">
-                <StarIconOutline className="text-white w-6 stroke-[3]" />
-              </div>
-              <div data-title="Не нравится">
-                <NoSymbolIconOutline className="text-white w-6 stroke-[3]" />
-              </div>
+          {/* <div className="flex justify-between"> */}
+          <div className="flex flex-col gap-2 absolute top-2 right-2" ref={ref}>
+            <div data-title="Смотреть позже">
+              <BookmarkIconOutline className="text-white w-6 stroke-[3]" />
+            </div>
+            <div data-title="Похожее">
+              <SparklesIconOutline className="text-white w-6 stroke-[2]" />
+            </div>
+            <div data-title="Оценить">
+              <StarIconOutline className="text-white w-6 stroke-[3]" />
+            </div>
+            <div data-title="Не нравится">
+              <NoSymbolIconOutline className="text-white w-6 stroke-[3]" />
             </div>
           </div>
+          {/* </div> */}
 
           {/* Описание */}
           <div className="text-white flex flex-col text-[13px]">
-            <span>
+            <p className="text-white flex items-end text-[22px]">{ratio}</p>
+            <p>
               сюжет
               <span></span>
-            </span>
-            <span>
+            </p>
+            <p>
               {year},{country}
-            </span>
-            <span>{genre}</span>
-            <span>{duration}</span>
+            </p>
+            <p>{genre}</p>
+            <p>{duration}</p>
           </div>
         </div>
       </div>
