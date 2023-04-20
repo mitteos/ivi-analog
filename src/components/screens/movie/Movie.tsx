@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import {
   Banner,
-  CreatorsList,
+  CreatorsList, Modal,
   MovieInfo,
   Player,
   ReviewsList,
@@ -11,7 +11,7 @@ import React from "react";
 const Movie: React.FC<{}> = () => {
   return (
     <Layout title={"movie name"}>
-      <div className="page-container bg-[#100E19]">
+      <div className="page-container pt-12">
         <div className="py-6 min-[1050px]:hidden">
           <MovieInfo variant="short" />
         </div>
@@ -30,6 +30,7 @@ const Movie: React.FC<{}> = () => {
           <Banner />
         </div>
       </div>
+      <Modal />
     </Layout>
   );
 };
