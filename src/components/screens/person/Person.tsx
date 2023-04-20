@@ -6,8 +6,11 @@ import CustomSlider from "@/components/customs/custom-slider/CustomSlider";
 import PreviewFilm from "@/components/previews/preview-film/PreviewFilm";
 import Filmography from "./filmography/Filmography";
 import Biography from "./biography/Biography";
+import { PersonProps } from "./types";
+import { useRouter } from "next/router";
+import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
-const backgroundImage = "/images/person-image-big.jpg";
+// const backgroundImage = "/images/person-image-big.jpg";
 
 const sliderData = [
   "Россия",
@@ -22,16 +25,25 @@ const sliderData = [
   "Индия",
 ];
 
-const Person: React.FC = () => {
+const Person: React.FC<PersonProps> = ({ imgBig, imgSmall }) => {
+  const router = useRouter();
+
   return (
     <>
       <Layout title={"Скарлетт Йоханссон"}>
         <>
-          {backgroundImage && <PersonBackground img={backgroundImage} />}
+          {imgBig && <PersonBackground img={imgBig} />}
 
           <div className="page-container">
+            <button
+              onClick={() => router.back()}
+              className="text-white absolute top-0 mt-4 flex items-center group/back cursor-pointer"
+            >
+              <ChevronLeftIcon className="w-10 group-hover/back:scale-125 transition" />
+              Назад
+            </button>
             <PersonSection>
-              <Description />
+              <Description smallImage={imgSmall || null} />
             </PersonSection>
             <PersonSection withoutPadding title="Главные фильмы">
               <CustomSlider
