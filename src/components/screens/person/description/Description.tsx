@@ -36,9 +36,9 @@ const Description: React.FC = () => {
         </button>
       </div>
       <div className="flex gap-2 items-center mt-10 opacity-90 text-[18px]">
-        <button>59 фильмов</button>
+        <button className="cursor-pointer">59 фильмов</button>
         <span className="w-1 h-1 rounded-full bg-white"></span>
-        <button>Биография</button>
+        <button className="cursor-pointer">Биография</button>
       </div>
     </div>
   );

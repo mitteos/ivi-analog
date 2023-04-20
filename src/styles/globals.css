@@ -26,7 +26,7 @@ body {
 }
 
 .person-content {
-  @apply w-1/2 pl-3 pr-3 ml-[25%];
+  @apply w-1/2 ml-[25%];
 }
 
 .page-header-container {
