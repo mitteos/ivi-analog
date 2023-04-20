@@ -16,7 +16,7 @@ const Description: React.FC = () => {
   return (
     <div className="pt-[calc(100vw*.321)] flex flex-col text-white">
       <div className="text-[#a5a1b2] text-[15px]">Scarlett Johansson</div>
-      <h1 className="mt-4 break-words font-[600] text-[56px]">
+      <h1 className="mt-4 break-words font-[600] text-[40px] sm:text-[56px]">
         Скарлетт Йоханссон
       </h1>
       <div className="mt-4 text-[#d9d7e0]">

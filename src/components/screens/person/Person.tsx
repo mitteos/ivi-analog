@@ -5,6 +5,7 @@ import Description from "./description/Description";
 import CustomSlider from "@/components/customs/custom-slider/CustomSlider";
 import PreviewFilm from "@/components/previews/preview-film/PreviewFilm";
 import Filmography from "./filmography/Filmography";
+import Biography from "./biography/Biography";
 
 const backgroundImage = "/images/person-image-big.jpg";
 
@@ -24,7 +25,7 @@ const sliderData = [
 const Person: React.FC = () => {
   return (
     <>
-      <Layout title={"actor name"}>
+      <Layout title={"Скарлетт Йоханссон"}>
         <>
           {backgroundImage && <PersonBackground img={backgroundImage} />}
 
@@ -56,6 +57,9 @@ const Person: React.FC = () => {
             </PersonSection>
             <PersonSection>
               <Filmography items={sliderData} />
+            </PersonSection>
+            <PersonSection title="Биография">
+              <Biography />
             </PersonSection>
           </div>
         </>

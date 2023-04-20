@@ -10,7 +10,11 @@ const PersonSection: React.FC<PropsWithChildren<PersonSectionProps>> = ({
   return (
     <Section>
       <div className={`person-content ${withoutPadding ? "" : "px-3"}`}>
-        <h2 className="pl-[10px] text-white text-[24px] font-semibold mb-[10px]">
+        <h2
+          className={`
+          text-white text-[24px] font-semibold mb-7 
+          ${withoutPadding ? "pl-3" : ""}`}
+        >
           {title}
         </h2>
         {children}

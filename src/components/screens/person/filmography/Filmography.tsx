@@ -1,21 +1,36 @@
-import React, { PropsWithChildren, useCallback, useState } from "react";
+import React, {
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { FilmographyProps } from "./types";
 import FilmographyItem from "./filmography-item/FilmographyItem";
 
 const Filmography: React.FC<PropsWithChildren<FilmographyProps>> = ({
   items,
 }) => {
-  const [films, setFilms] = useState(items.slice(0, 5));
+  const [films, setFilms] = useState<any[]>(items.slice(0, 5));
+  const [short, setShort] = useState(true);
 
   const showAll = useCallback(() => {
-    setFilms(items);
-  }, [items]);
+    setShort((curr) => !curr);
+  }, []);
+
+  useEffect(() => {
+    if (short) setFilms(items.slice(0, 5));
+    if (!short) setFilms(items);
+  }, [short, items]);
 
   return (
     <div className="text-white">
-      <h2 className="text-white text-[24px] font-semibold mb-[20px]">
-        Полная фильмография
-      </h2>
+      <div className="flex text-white mb-7 items-end">
+        <h2 className="text-[24px] font-semibold mr-2 leading-7">
+          Полная фильмография
+        </h2>
+        <p className="text-[#a5a1b2] leading-5">{items.length} фильмов</p>
+      </div>
+
       <ul className="flex flex-col gap-5">
         {films.map((item, index) => (
           <FilmographyItem
@@ -29,7 +44,9 @@ const Filmography: React.FC<PropsWithChildren<FilmographyProps>> = ({
           />
         ))}
       </ul>
-      <button onClick={showAll}>Показать еще</button>
+      <button onClick={showAll} className="mt-4 text-[#a5a1b2]">
+        {short ? `Еще ${items.length - 5} фильмов` : "Скрыть"}
+      </button>
     </div>
   );
 };

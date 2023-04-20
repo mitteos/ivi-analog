@@ -26,7 +26,7 @@ body {
 }
 
 .person-content {
-  @apply w-1/2 ml-[25%];
+  @apply w-full xs:w-2/3 xs:ml-[16%] lg:w-1/2 lg:ml-[25%];
 }
 
 .page-header-container {
