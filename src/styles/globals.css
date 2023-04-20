@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&display=swap");
 
 html {
   box-sizing: border-box;
@@ -11,18 +11,22 @@ html {
 
 body {
   min-width: 320px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 /* Размеры шрифтов сайта ivi */
 /* ['10px', '13px', '15px', '16px', '17px', '20px', '24px', '32px', '56px'] */
 
 .page-bg-color {
-  @apply bg-[#100e19]
+  @apply bg-[#100e19];
 }
 
 .page-container {
   @apply max-w-screen-xl mx-auto;
+}
+
+.person-content {
+  @apply w-1/2 pl-3 pr-3 ml-[25%];
 }
 
 .page-header-container {
@@ -43,47 +47,47 @@ body {
   }
 
   .link-list-title {
-    @apply mb-[8px] text-[15px] font-bold text-white leading-[20px] 
+    @apply mb-[8px] text-[15px] font-bold text-white leading-[20px];
   }
 
   .subscription-tile {
-    @apply flex flex-col justify-between h-32 p-[15px] rounded-lg bg-[#312b45] pointer-events-none
+    @apply flex flex-col justify-between h-32 p-[15px] rounded-lg bg-[#312b45] pointer-events-none;
   }
 
   .subscription-tile-title {
-    @apply text-[15px] font-bold
+    @apply text-[15px] font-bold;
   }
 
   .profile-tile {
-    @apply flex flex-col justify-between min-h-[108px] p-[15px] rounded-lg bg-[#312b45] hover:bg-[#3e3758] transition-all duration-300
+    @apply flex flex-col justify-between min-h-[108px] p-[15px] rounded-lg bg-[#312b45] hover:bg-[#3e3758] transition-all duration-300;
   }
 
   .profile-title {
-    @apply text-[15px] font-bold
+    @apply text-[15px] font-bold;
   }
 
   .profile-tile-small {
-    @apply text-[13px] font-bold text-white/[.48] 
+    @apply text-[13px] font-bold text-white/[.48];
   }
 
   .footer-social {
-    @apply flex justify-center items-center w-10 h-10 rounded-full bg-[#1f1b2e] hover:bg-[#2e2844] focus:bg-[#2e2844] active:bg-[#0e0c14] transition-all duration-300 outline-none
+    @apply flex justify-center items-center w-10 h-10 rounded-full bg-[#1f1b2e] hover:bg-[#2e2844] focus:bg-[#2e2844] active:bg-[#0e0c14] transition-all duration-300 outline-none;
   }
-  
+
   .footer-social-img {
-    @apply w-4 h-4
+    @apply w-4 h-4;
   }
 
   .footer-button {
-    @apply flex items-center justify-center rounded-lg text-[15px] text-white font-bold bg-[#1f1b2e] hover:bg-[#2e2844] focus:bg-[#2e2844] active:bg-[#0e0c14] transition-all duration-300 outline-none
+    @apply flex items-center justify-center rounded-lg text-[15px] text-white font-bold bg-[#1f1b2e] hover:bg-[#2e2844] focus:bg-[#2e2844] active:bg-[#0e0c14] transition-all duration-300 outline-none;
   }
 
   .footer-subscription-link {
-    @apply bg-gradient-to-b from-[#A869F0] to-[#834CC2] shadow-[0_0_104px_#A869F0]
+    @apply bg-gradient-to-b from-[#A869F0] to-[#834CC2] shadow-[0_0_104px_#A869F0];
   }
 
   .footer-tab {
-    @apply flex flex-col items-center w-16 h-12 text-[10px] font-bold leading-3 outline-none
+    @apply flex flex-col items-center w-16 h-12 text-[10px] font-bold leading-3 outline-none;
   }
 }
 
@@ -93,11 +97,11 @@ body {
 
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  background-color: rgba(31,27,46,.88);
-  box-shadow: 0 -20px 40px rgba(7,5,14,.24);
+  background-color: rgba(31, 27, 46, 0.88);
+  box-shadow: 0 -20px 40px rgba(7, 5, 14, 0.24);
 }
 
-.footer-tab-item { 
+.footer-tab-item {
   position: relative;
 
   display: flex;
@@ -109,15 +113,15 @@ body {
   max-width: 120px;
   padding-bottom: 4px;
   padding-top: 8px;
-  
+
   text-decoration: none;
   cursor: pointer;
 }
 
-.link-with-gradient {    
-  background-image: -webkit-linear-gradient(135deg,#c447ff,#ea003d);
-  background-image: -o-linear-gradient(135deg,#c447ff,#ea003d);
-  background-image: linear-gradient(-45deg,#c447ff,#ea003d);
+.link-with-gradient {
+  background-image: -webkit-linear-gradient(135deg, #c447ff, #ea003d);
+  background-image: -o-linear-gradient(135deg, #c447ff, #ea003d);
+  background-image: linear-gradient(-45deg, #c447ff, #ea003d);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -165,4 +169,5 @@ body {
 }
 
 .swiper-button-disabled {
-  display: none;}
+  display: none;
+}
