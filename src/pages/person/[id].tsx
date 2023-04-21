@@ -1,6 +1,6 @@
-import Person from "@/components/screens/person/Person";
-import { NextPage } from "next";
-import { GetStaticPaths, GetStaticProps } from "next";
+import Person from '@/components/screens/person/Person';
+import { NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 interface PersonPageProps {
   imgBig?: string;
@@ -22,10 +22,10 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params as { id: string };
   let props;
-  if (id == "1") {
-    props = { imgBig: "/images/person-image-big.jpg" };
+  if (id == '1') {
+    props = { imgBig: '/images/person-image-big.jpg' };
   } else {
-    props = { imgSmall: "/images/actor.jpg" };
+    props = { imgSmall: '/images/actor.jpg' };
   }
 
   return { props };

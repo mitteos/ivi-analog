@@ -1,1 +1,1 @@
-export {CreatorsList} from "./CreatorsList"
+export { CreatorsList } from './CreatorsList';

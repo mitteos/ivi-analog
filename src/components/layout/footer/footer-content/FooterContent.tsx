@@ -1,7 +1,4 @@
-import {
-  footerAboutLinks,
-  footerSectionsLinks,
-} from '@/components/links-list/links';
+import { footerAboutLinks, footerSectionsLinks } from '@/components/links-list/links';
 
 import FooterButton from '../footer-button/FooterButton';
 import Socials from '../socials/Socials';
@@ -36,12 +33,8 @@ const FooterContent = () => {
         <div className='flex flex-col w-1/4 px-3'>
           <h3 className='link-list-title'>Служба поддержки</h3>
           <div>
-            <p className='text-[15px] font-normal text-white/[.48]'>
-              Мы всегда готовы вам помочь.
-            </p>
-            <p className='text-[15px] font-normal text-white/[.48]'>
-              Наши операторы онлайн 24/7
-            </p>
+            <p className='text-[15px] font-normal text-white/[.48]'>Мы всегда готовы вам помочь.</p>
+            <p className='text-[15px] font-normal text-white/[.48]'>Наши операторы онлайн 24/7</p>
           </div>
           <div className='mt-6'>
             <FooterButton size='middle'>
@@ -88,11 +81,7 @@ const FooterContent = () => {
 
             {isSupportPhoneShown ? (
               <div className='absolute top-[68px]'>
-                <a
-                  className='iviFooter__phoneItem'
-                  href='tel:+73432269220'
-                  rel='nofollow'
-                >
+                <a className='iviFooter__phoneItem' href='tel:+73432269220' rel='nofollow'>
                   <FooterButton size='large'>
                     <span className='w-[194px]'>+7 343 226-92-20</span>
                   </FooterButton>
@@ -110,9 +99,7 @@ const FooterContent = () => {
             >
               ask.ivi.ru
             </a>
-            <p className='text-[15px] font-normal text-white/[.48]'>
-              Ответы на вопросы
-            </p>
+            <p className='text-[15px] font-normal text-white/[.48]'>Ответы на вопросы</p>
           </div>
         </div>
 
@@ -155,12 +142,8 @@ const FooterContent = () => {
                 <FooterButton size='middle' isWrappedByLink>
                   <img src='/apple-logo.svg' />
                   <div className='flex flex-col items-start  ml-2'>
-                    <span className='text-[10px] leading-[12px] font-normal'>
-                      Загрузить в
-                    </span>
-                    <span className='text-[15px] leading-[20px]'>
-                      App Store
-                    </span>
+                    <span className='text-[10px] leading-[12px] font-normal'>Загрузить в</span>
+                    <span className='text-[15px] leading-[20px]'>App Store</span>
                   </div>
                 </FooterButton>
               </a>
@@ -174,12 +157,8 @@ const FooterContent = () => {
                 <FooterButton size='middle' isWrappedByLink>
                   <img src='/googleplay-logo.svg' />
                   <div className='flex flex-col items-start ml-2'>
-                    <span className='text-[10px] leading-[12px] font-normal'>
-                      Доступно в
-                    </span>
-                    <span className='text-[15px] leading-[20px]'>
-                      Google Play
-                    </span>
+                    <span className='text-[10px] leading-[12px] font-normal'>Доступно в</span>
+                    <span className='text-[15px] leading-[20px]'>Google Play</span>
                   </div>
                 </FooterButton>
               </a>
@@ -207,9 +186,7 @@ const FooterContent = () => {
                   </svg>
 
                   <div className='flex flex-col items-start ml-2'>
-                    <span className='text-[10px] leading-[12px] font-normal'>
-                      Смотрите на
-                    </span>
+                    <span className='text-[10px] leading-[12px] font-normal'>Смотрите на</span>
                     <span className='text-[15px] leading-[20px]'>Smart TV</span>
                   </div>
                 </FooterButton>
@@ -237,9 +214,7 @@ const FooterContent = () => {
                     />
                   </svg>
 
-                  <span className='ml-2 text-[15px] leading-[20px]'>
-                    Все устройства
-                  </span>
+                  <span className='ml-2 text-[15px] leading-[20px]'>Все устройства</span>
                 </FooterButton>
               </a>
             </div>

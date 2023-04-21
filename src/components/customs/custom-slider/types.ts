@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface SwiperComponentProps {
   children: React.ReactNode[];
@@ -18,6 +18,6 @@ export interface CustomSliderProps {
   buttonsPosition: ButtonsPositionType;
 }
 
-export type SizeType = "small" | "default";
-export type ButtonsPositionType = "inside" | "outside";
-export type SlidesPerViewType = number | "auto";
+export type SizeType = 'small' | 'default';
+export type ButtonsPositionType = 'inside' | 'outside';
+export type SlidesPerViewType = number | 'auto';
