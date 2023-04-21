@@ -20,7 +20,7 @@ const Layout: React.FC<MetaProps> = ({ title, description, children }) => {
     <Meta title={title} description={description}>
       <div className='h-screen grid grid-rows-layout grid-cols-1'>
         <Header />
-        <main>{children}</main>
+        <main className='relative'>{children}</main>
         {isLargeScreen ? <DynamicFooter /> : <DynamicMobileFooter />}
       </div>
     </Meta>

@@ -1,31 +1,24 @@
 import { useMediaQuery } from 'react-responsive';
 
 type NotificationBtnProps = {
+  // eslint-disable-next-line no-unused-vars
   handleHovering: (arg: string) => void;
   handleClick: () => void;
 };
 
-const NotificationBtn: React.FC<NotificationBtnProps> = ({
-  handleHovering,
-  handleClick,
-}) => {
+const NotificationBtn: React.FC<NotificationBtnProps> = ({ handleHovering, handleClick }) => {
   const isLargeScreen = useMediaQuery({
     query: '(min-width: 1160px)',
   });
 
   return (
     <div
-      onMouseOver={
-        isLargeScreen ? () => handleHovering('notification') : undefined
-      }
+      onMouseOver={isLargeScreen ? () => handleHovering('notification') : undefined}
       onMouseOut={isLargeScreen ? () => handleHovering('') : undefined}
       onClick={handleClick}
     >
       <div className='flex h-full items-center'>
-        <button
-          className='header-link hover:scale-125 focus:scale-125'
-          type='button'
-        >
+        <button className='header-link hover:scale-125 focus:scale-125' type='button'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'

@@ -19,9 +19,7 @@ const SubscriptionBtn: React.FC<SubscriptionBtnProps> = ({ text, bgColor }) => {
   }, [isActive]);
 
   const background =
-    bgColor === 'gradient'
-      ? 'bg-gradient-to-r from-[#c447ff] to-[#ea003d]'
-      : 'bg-[#ea003d]';
+    bgColor === 'gradient' ? 'bg-gradient-to-r from-[#c447ff] to-[#ea003d]' : 'bg-[#ea003d]';
 
   const currentBg = isActive
     ? `text-transparent ${background} opacity-50`
@@ -34,11 +32,7 @@ const SubscriptionBtn: React.FC<SubscriptionBtnProps> = ({ text, bgColor }) => {
         onClick={() => setIsActive(true)}
       >
         {text}
-        <span
-          className={`absolute top-[18%] left-[42%] ${
-            isActive ? 'loader' : ''
-          }`}
-        />
+        <span className={`absolute top-[18%] left-[42%] ${isActive ? 'loader' : ''}`} />
       </button>
     </div>
   );

@@ -10,4 +10,4 @@ export interface PreviewFilmProps {
   iviChoice?: boolean;
 }
 
-export type PreviewAccessType = "sub" | "buy" | "free";
+export type PreviewAccessType = 'sub' | 'buy' | 'free';

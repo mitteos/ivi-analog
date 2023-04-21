@@ -1,1 +1,1 @@
-export {PlayerControl} from "./PlayerControl"
+export { PlayerControl } from './PlayerControl';

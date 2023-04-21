@@ -1,5 +1,5 @@
 export default interface CustomSelectListProps {
   visible: boolean;
-  size?: "big";
+  size?: 'big';
   options: string[];
 }

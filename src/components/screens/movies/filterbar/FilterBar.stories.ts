@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import FilterBar from "./FilterBar";
+import type { Meta, StoryObj } from '@storybook/react';
+import FilterBar from './FilterBar';
 
 const meta: Meta<typeof FilterBar> = {
-  title: "Components/Filter bar",
+  title: 'Components/Filter bar',
   component: FilterBar,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {},
 };
 

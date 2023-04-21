@@ -5,9 +5,7 @@ import FooterTab from './footer-tab/FooterTab';
 
 const MobileFooter = () => {
   const router = useRouter();
-  const [currentActiveTab, setCurrentActiveTab] = useState<string>(
-    router.pathname
-  );
+  const [currentActiveTab, setCurrentActiveTab] = useState<string>(router.pathname);
 
   const handleClick = (tab: string) => {
     setCurrentActiveTab(tab);
@@ -16,11 +14,7 @@ const MobileFooter = () => {
   return (
     <footer className='fixed bottom-0 left-0 right-0 z-50'>
       <div className='mobile-footer h-12 text-white'>
-        <Link
-          className='footer-tab-item'
-          href='/'
-          onClick={() => handleClick('/')}
-        >
+        <Link className='footer-tab-item' href='/' onClick={() => handleClick('/')}>
           <FooterTab isActive={currentActiveTab === '/'}>
             <span className='w-[20px] h-[20px]'>
               <svg
@@ -42,11 +36,7 @@ const MobileFooter = () => {
           </FooterTab>
         </Link>
 
-        <Link
-          className='footer-tab-item'
-          href='/movies'
-          onClick={() => handleClick('/movies')}
-        >
+        <Link className='footer-tab-item' href='/movies' onClick={() => handleClick('/movies')}>
           <FooterTab isActive={currentActiveTab === '/movies'}>
             <span className='w-[20px] h-[20px]'>
               <svg
