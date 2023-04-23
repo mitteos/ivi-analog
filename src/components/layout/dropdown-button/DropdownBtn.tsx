@@ -7,7 +7,7 @@ const DropdownBtn: React.FC<DropdownBtnProps> = ({
   children,
 }) => {
   return (
-    <button className='drawer-nav-link flex items-center' onClick={handleClick}>
+    <button className='mobile-nav-link flex items-center' onClick={handleClick}>
       {children}
       {isDropdownOpen ? (
         <ChevronUpIcon className='w-5 h-5 ml-3 stroke-2' />

@@ -18,7 +18,7 @@ const MobileNavigationContent = () => {
         <RatingsGroup />
         <AboutInfo />
         <div className='mb-6'>
-          <button className='drawer-nav-link flex items-center'>
+          <button className='mobile-nav-link flex items-center'>
             <TvIcon className='w-5 h-5 mr-3 stroke-2' />
             Вход по коду
           </button>

@@ -48,13 +48,13 @@ const NestedNavigation = () => {
       <nav>
         <ul className='[&>*:not(:first-child)]:mt-6'>
           <li>
-            <Link className='drawer-nav-link' href='/'>
+            <Link className='mobile-nav-link' href='/'>
               Мой Иви
             </Link>
           </li>
           <li>
             <a
-              className='drawer-nav-link'
+              className='mobile-nav-link'
               href='https://www.ivi.ru/new'
               target='_blank'
               rel='noopener noreferrer'
@@ -142,7 +142,7 @@ const NestedNavigation = () => {
           </li>
           <li>
             <a
-              className='drawer-nav-link'
+              className='mobile-nav-link'
               href='https://www.ivi.ru/goodmovies'
               target='_blank'
               rel='noopener noreferrer'

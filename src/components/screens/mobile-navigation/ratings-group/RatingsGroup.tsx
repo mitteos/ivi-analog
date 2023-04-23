@@ -4,7 +4,7 @@ const RatingsGroup = () => {
       <ul className='[&>*:not(:first-child)]:mt-6'>
         <li className='mobileNavigation__linkSectionItem'>
           <a
-            className='drawer-nav-link'
+            className='mobile-nav-link'
             href='https://www.ivi.ru/movies/all?ivi_rating_10_gte=7&amp;sort=ivi&amp;rating_part=main&amp;rating_model=ready'
             target='_blank'
             rel='noopener noreferrer'
@@ -14,7 +14,7 @@ const RatingsGroup = () => {
         </li>
         <li className='mobileNavigation__linkSectionItem'>
           <a
-            className='drawer-nav-link'
+            className='mobile-nav-link'
             href='https://www.ivi.ru/series/all?ivi_rating_10_gte=7&amp;sort=ivi&amp;rating_part=main&amp;rating_model=ready'
             target='_blank'
             rel='noopener noreferrer'
