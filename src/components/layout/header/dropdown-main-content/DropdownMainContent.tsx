@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
 import LinksList from '@/components/links-list/LinksList';
 import { DropdownMainContentProps } from './types';
+import SubscriptionBlock from '../subscription-block/SubscriptionBlock';
 
 const DropdownMainContent: React.FC<DropdownMainContentProps> = ({
   genresLinks,
@@ -60,7 +61,7 @@ const DropdownMainContent: React.FC<DropdownMainContentProps> = ({
           </div>
         </div>
       ) : (
-        <div className='flex mt-16 p-8 min-h-[390px]'>
+        <div className='flex mt-16 p-8 min-h-[390px] max-h-[398px]'>
           <div className='w-1/3 px-3'>
             <h3 className='link-list-title'>Жанры</h3>
             <div className='columns-2 gap-x-6'>
@@ -78,8 +79,9 @@ const DropdownMainContent: React.FC<DropdownMainContentProps> = ({
               <LinksList direction='column' links={yearsLinks} />
             </div>
           </div>
-          <div className='w-1/2'>
+          <div className='flex justify-between w-1/2'>
             <LinksList direction='column' links={newLinks} />
+            <SubscriptionBlock />
           </div>
         </div>
       )}
