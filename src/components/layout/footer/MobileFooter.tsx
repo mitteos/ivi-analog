@@ -14,10 +14,8 @@ import {
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 
 const MobileFooter = () => {
-  const prevRoute = useContext(AppContext);
-
-  console.log(prevRoute);
   const router = useRouter();
+  const prevRoute = useContext(AppContext);
   const [currentActiveTab, setCurrentActiveTab] = useState<string>(
     router.pathname
   );
