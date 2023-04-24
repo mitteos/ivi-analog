@@ -1,1 +1,1 @@
-export {MedallionsItem} from "./MedallionsItem"
+export { MedallionsItem } from './MedallionsItem';

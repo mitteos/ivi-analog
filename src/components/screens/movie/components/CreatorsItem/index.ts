@@ -1,1 +1,1 @@
-export {CreatorsItem} from "./CreatorsItem"
+export { CreatorsItem } from './CreatorsItem';

@@ -4,4 +4,4 @@ export default interface CustomButtonProps {
   icon?: React.ReactNode;
 }
 
-export type ButtonColorType = "default" | "filled";
+export type ButtonColorType = 'default' | 'filled';

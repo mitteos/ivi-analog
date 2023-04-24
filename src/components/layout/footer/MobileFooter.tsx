@@ -15,10 +15,14 @@ import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 
 const MobileFooter = () => {
   const router = useRouter();
+<<<<<<< HEAD
   const prevRoute = useContext(AppContext);
   const [currentActiveTab, setCurrentActiveTab] = useState<string>(
     router.pathname
   );
+=======
+  const [currentActiveTab, setCurrentActiveTab] = useState<string>(router.pathname);
+>>>>>>> develop
 
   const handleClick = (tab: string) => {
     if (currentActiveTab === '/navigation') {
@@ -35,22 +39,14 @@ const MobileFooter = () => {
   return (
     <footer className='fixed bottom-0 left-0 right-0 z-50'>
       <div className='mobile-footer h-12 text-white'>
-        <Link
-          className='footer-tab-item'
-          href='/'
-          onClick={() => handleClick('/')}
-        >
+        <Link className='footer-tab-item' href='/' onClick={() => handleClick('/')}>
           <FooterTab isActive={currentActiveTab === '/'}>
             <HomeIcon className='w-[20px] h-[20px] stroke-[3]' />
             <span className='mt-[4px]'>Мой Иви</span>
           </FooterTab>
         </Link>
 
-        <Link
-          className='footer-tab-item'
-          href='/movies'
-          onClick={() => handleClick('/movies')}
-        >
+        <Link className='footer-tab-item' href='/movies' onClick={() => handleClick('/movies')}>
           <FooterTab isActive={currentActiveTab === '/movies'}>
             <FolderOpenIcon className='w-[20px] h-[20px] stroke-[3]' />
             <span className='mt-[4px]'>Каталог</span>
