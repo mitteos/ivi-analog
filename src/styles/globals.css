@@ -55,13 +55,8 @@ body {
   }
 
   .subscription-tile-title {
-<<<<<<< HEAD
     @apply text-[15px] font-bold
   } 
-=======
-    @apply text-[15px] font-bold;
-  }
->>>>>>> develop
 
   .profile-tile {
     @apply flex flex-col justify-between min-h-[108px] p-[15px] rounded-lg bg-[#312b45] hover:bg-[#3e3758] transition-all duration-300;
@@ -179,7 +174,6 @@ body {
 .swiper-button-disabled {
   display: none;
 }
-<<<<<<< HEAD
 
 .mobile-nav-link {
   @apply text-[15px] font-bold text-white hover:opacity-[.72] focus:opacity-[.72] active:opacity-100 transition-all duration-300 outline-none;
@@ -196,5 +190,3 @@ body {
 .subscription-gallery-link:active {
   box-shadow: 0 0 0 #6d687c, inset 0 -1.5em 0 #6d687c;
 }
-=======
->>>>>>> develop

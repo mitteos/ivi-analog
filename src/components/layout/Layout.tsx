@@ -21,15 +21,9 @@ const Layout: React.FC<MetaProps> = ({ title, description, children }) => {
 
   return (
     <Meta title={title} description={description}>
-<<<<<<< HEAD
       <div className='relative h-screen grid grid-rows-layout grid-cols-1'>
         <DynamicHeader />
         <main>{children}</main>
-=======
-      <div className='h-screen grid grid-rows-layout grid-cols-1'>
-        <Header />
-        <main className='relative'>{children}</main>
->>>>>>> develop
         {isLargeScreen ? <DynamicFooter /> : <DynamicMobileFooter />}
       </div>
     </Meta>

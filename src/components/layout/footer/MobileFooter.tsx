@@ -15,14 +15,8 @@ import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 
 const MobileFooter = () => {
   const router = useRouter();
-<<<<<<< HEAD
   const prevRoute = useContext(AppContext);
-  const [currentActiveTab, setCurrentActiveTab] = useState<string>(
-    router.pathname
-  );
-=======
   const [currentActiveTab, setCurrentActiveTab] = useState<string>(router.pathname);
->>>>>>> develop
 
   const handleClick = (tab: string) => {
     if (currentActiveTab === '/navigation') {
@@ -74,10 +68,7 @@ const MobileFooter = () => {
           </FooterTab>
         </a>
 
-        <div
-          className='footer-tab-item'
-          onClick={() => handleClick('/navigation')}
-        >
+        <div className='footer-tab-item' onClick={() => handleClick('/navigation')}>
           <FooterTab isActive={currentActiveTab === '/navigation'}>
             {currentActiveTab === '/navigation' ? (
               <XMarkIcon className='w-[20px] h-[20px] stroke-[3]' />
